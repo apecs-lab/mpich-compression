@@ -70,3 +70,7 @@ mpi_core_sources += \
 
 noinst_HEADERS +=                    \
     src/mpi/coll/include/coll_impl.h
+
+# === cuSZp integration ===
+AM_CPPFLAGS += @CUSZP_CPPFLAGS@
+AM_LDFLAGS = @CUSZP_LDFLAGS@

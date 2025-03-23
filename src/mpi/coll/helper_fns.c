@@ -4,6 +4,9 @@
  */
 
 #include "mpiimpl.h"
+#include <cuda_runtime.h>
+#include <cuSZp.h>
+
 
 #if !defined(MPIC_REQUEST_PTR_ARRAY_SIZE)
 #define MPIC_REQUEST_PTR_ARRAY_SIZE 64

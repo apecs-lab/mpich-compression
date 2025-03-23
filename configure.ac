@@ -100,6 +100,13 @@ dnl dropped) before AC_INIT.
 m4_define([MPICH_CONFIGURE], 1)
 m4_include([maint/version.m4])
 dnl 2nd arg is intentionally underquoted
+
+m4_pattern_allow([AC_CHECK_LIB])
+m4_pattern_allow([AC_CHECK_HEADER])
+m4_pattern_allow([AC_SUBST])
+m4_pattern_allow([AC_MSG_NOTICE])
+m4_pattern_allow([AC_MSG_ERROR])
+
 AC_INIT([MPICH],
         MPICH_VERSION_m4,
         [discuss@mpich.org],
@@ -2055,6 +2062,35 @@ if test "$enable_f77" = "yes" ; then
     FORTRAN_BINDING=1
 
 fi
+
+dnl === Check for cuSZp ===
+
+CUSZP_DIR="${ac_pwd}/external/cuszp"
+
+CPPFLAGS_SAVE="$CPPFLAGS"
+LDFLAGS_SAVE="$LDFLAGS"
+
+CPPFLAGS="$CPPFLAGS -I$CUSZP_DIR/include"
+
+if test -d "$CUSZP_DIR/lib64"; then
+    CUSZP_LIBDIR="$CUSZP_DIR/lib64"
+elif test -d "$CUSZP_DIR/lib"; then
+    CUSZP_LIBDIR="$CUSZP_DIR/lib"
+else
+    AC_MSG_ERROR([Neither lib64 nor lib found under $CUSZP_DIR])
+fi
+
+LDFLAGS="$LDFLAGS -L$CUSZP_LIBDIR"
+
+dnl === Check header only, skip AC_CHECK_LIB ===
+AC_CHECK_HEADER([cuSZp.h], [], [AC_MSG_ERROR([cuSZp.h not found in $CUSZP_DIR/include])])
+
+
+CPPFLAGS="$CPPFLAGS_SAVE"
+LDFLAGS="$LDFLAGS_SAVE"
+
+AC_SUBST([CUSZP_CPPFLAGS], ["-I$CUSZP_DIR/include"])
+AC_SUBST([CUSZP_LDFLAGS], ["-L$CUSZP_LIBDIR -lcuSZp -lcudart"])
 
 dnl By modifying mpif.h to use ! for comments, it can work with many f90
 dnl compilers without creating a separate version.
