@@ -56,7 +56,6 @@ int MPIC_Probe(int source, int tag, MPI_Comm comm, MPI_Status * status)
     int attr = 0;
     MPIR_Comm *comm_ptr;
 
-    /* Return immediately for dummy process */
     if (unlikely(source == MPI_PROC_NULL)) {
         MPIR_Status_set_procnull(status);
         goto fn_exit;
@@ -70,9 +69,9 @@ int MPIC_Probe(int source, int tag, MPI_Comm comm, MPI_Status * status)
     if (mpi_errno != MPI_SUCCESS)
         goto fn_fail;
 
-  fn_exit:
+fn_exit:
     return mpi_errno;
-  fn_fail:
+fn_fail:
     if (mpi_errno == MPIX_ERR_NOREQ)
         MPIR_ERR_SET(mpi_errno, MPI_ERR_OTHER, "**nomem");
     goto fn_exit;
@@ -83,19 +82,19 @@ int MPIC_Probe(int source, int tag, MPI_Comm comm, MPI_Status * status)
    the global lock is *not* held when this routine is called. (unless we change
    progress_start/end to grab the lock, in which case we must *still* make
    sure that the lock is not held when this routine is called). */
-int MPIC_Wait(MPIR_Request * request_ptr)
-{
-    int mpi_errno = MPI_SUCCESS;
-
-    MPIR_FUNC_ENTER;
-
-    mpi_errno = MPIR_Wait(request_ptr, MPI_STATUS_IGNORE);
-    MPIR_ERR_CHECK(mpi_errno);
-
-    if (request_ptr->kind == MPIR_REQUEST_KIND__RECV) {
-        mpi_errno = MPIR_Process_status(&request_ptr->status);
-        MPIR_ERR_CHECK(mpi_errno);
-    }
+   int MPIC_Wait(MPIR_Request * request_ptr)
+   {
+       int mpi_errno = MPI_SUCCESS;
+   
+       MPIR_FUNC_ENTER;
+   
+       mpi_errno = MPIR_Wait(request_ptr, MPI_STATUS_IGNORE);
+       MPIR_ERR_CHECK(mpi_errno);
+   
+       if (request_ptr->kind == MPIR_REQUEST_KIND__RECV) {
+           mpi_errno = MPIR_Process_status(&request_ptr->status);
+           MPIR_ERR_CHECK(mpi_errno);
+       }
 
   fn_exit:
     MPIR_FUNC_EXIT;
@@ -129,8 +128,52 @@ int MPIC_Wait(MPIR_Request * request_ptr)
    collective will not communicate failure information this way, but
    this is OK since there is no data that can be received corrupted. */
 
-int MPIC_Send(const void *buf, MPI_Aint count, MPI_Datatype datatype, int dest, int tag,
-              MPIR_Comm * comm_ptr, MPIR_Errflag_t errflag)
+// int MPIC_Send(const void *buf, MPI_Aint count, MPI_Datatype datatype, int dest, int tag,
+//               MPIR_Comm * comm_ptr, MPIR_Errflag_t errflag)
+// {
+//     int mpi_errno = MPI_SUCCESS;
+//     int attr = 0;
+//     MPIR_Request *request_ptr = NULL;
+
+//     MPIR_FUNC_ENTER;
+
+//     MPIR_DATATYPE_ASSERT_BUILTIN(datatype);
+
+//     /* Return immediately for dummy process */
+//     if (unlikely(dest == MPI_PROC_NULL)) {
+//         goto fn_exit;
+//     }
+
+//     MPIR_ERR_CHKANDJUMP1((count < 0), mpi_errno, MPI_ERR_COUNT,
+//                          "**countneg", "**countneg %d", count);
+
+//     MPIR_PT2PT_ATTR_SET_CONTEXT_OFFSET(attr, MPIR_CONTEXT_COLL_OFFSET);
+//     MPIR_PT2PT_ATTR_SET_ERRFLAG(attr, errflag);
+
+//     DO_MPID_ISEND(buf, count, datatype, dest, tag, comm_ptr, attr, &request_ptr);
+//     MPIR_ERR_CHECK(mpi_errno);
+//     if (request_ptr) {
+//         mpi_errno = MPIC_Wait(request_ptr);
+//         MPIR_ERR_CHECK(mpi_errno);
+//         MPIR_Request_free(request_ptr);
+//     }
+
+//   fn_exit:
+//     MPIR_FUNC_EXIT;
+//     return mpi_errno;
+//   fn_fail:
+//     /* --BEGIN ERROR HANDLING-- */
+//     if (mpi_errno == MPIX_ERR_NOREQ)
+//         MPIR_ERR_SET(mpi_errno, MPI_ERR_OTHER, "**nomem");
+//     if (request_ptr)
+//         MPIR_Request_free(request_ptr);
+//     goto fn_exit;
+//     /* --END ERROR HANDLING-- */
+// }
+
+/* MPIC_Send with blocking semantics + potential GPU compression. */
+int MPIC_Send(const void *buf, MPI_Aint count, MPI_Datatype datatype,
+    int dest, int tag, MPIR_Comm * comm_ptr, MPIR_Errflag_t errflag)
 {
     int mpi_errno = MPI_SUCCESS;
     int attr = 0;
@@ -140,40 +183,196 @@ int MPIC_Send(const void *buf, MPI_Aint count, MPI_Datatype datatype, int dest, 
 
     MPIR_DATATYPE_ASSERT_BUILTIN(datatype);
 
-    /* Return immediately for dummy process */
     if (unlikely(dest == MPI_PROC_NULL)) {
+    /* dummy process => no operation */
         goto fn_exit;
     }
 
     MPIR_ERR_CHKANDJUMP1((count < 0), mpi_errno, MPI_ERR_COUNT,
-                         "**countneg", "**countneg %d", count);
+                "**countneg", "**countneg %d", count);
 
     MPIR_PT2PT_ATTR_SET_CONTEXT_OFFSET(attr, MPIR_CONTEXT_COLL_OFFSET);
     MPIR_PT2PT_ATTR_SET_ERRFLAG(attr, errflag);
 
-    DO_MPID_ISEND(buf, count, datatype, dest, tag, comm_ptr, attr, &request_ptr);
+    bool on_gpu = is_buffer_on_gpu(buf);
+    cuszp_type_t czp_dtype = get_cuszp_datatype(datatype);
+
+    if (on_gpu && czp_dtype != (cuszp_type_t) -1 && count > 0) {
+    /* Compress to host buffer */
+    unsigned char *host_buffer = NULL;
+    size_t host_size = 0;
+    int rc = compress_gpu(buf, (size_t) count, czp_dtype, &host_buffer, &host_size);
+    if (rc == 0 && host_buffer && host_size > 0) {
+    /* Now do a single Isend with MPI_BYTE + wait + free */
+    DO_MPID_ISEND(host_buffer, host_size, MPI_BYTE, dest, tag,
+                    comm_ptr, attr, &request_ptr);
     MPIR_ERR_CHECK(mpi_errno);
+
     if (request_ptr) {
         mpi_errno = MPIC_Wait(request_ptr);
         MPIR_ERR_CHECK(mpi_errno);
         MPIR_Request_free(request_ptr);
     }
+    free(host_buffer);
+    goto fn_exit;
+    }
+    /* if compression fails => fallback to original path below */
+    }
 
-  fn_exit:
+    /* Normal path (CPU buffer or unsupported type) */
+    DO_MPID_ISEND(buf, count, datatype, dest, tag, comm_ptr, attr, &request_ptr);
+    MPIR_ERR_CHECK(mpi_errno);
+
+    if (request_ptr) {
+    mpi_errno = MPIC_Wait(request_ptr);
+    MPIR_ERR_CHECK(mpi_errno);
+    MPIR_Request_free(request_ptr);
+    }
+
+fn_exit:
     MPIR_FUNC_EXIT;
     return mpi_errno;
-  fn_fail:
-    /* --BEGIN ERROR HANDLING-- */
+fn_fail:
+    /* error handling */
     if (mpi_errno == MPIX_ERR_NOREQ)
         MPIR_ERR_SET(mpi_errno, MPI_ERR_OTHER, "**nomem");
     if (request_ptr)
         MPIR_Request_free(request_ptr);
     goto fn_exit;
-    /* --END ERROR HANDLING-- */
 }
 
-int MPIC_Recv(void *buf, MPI_Aint count, MPI_Datatype datatype, int source, int tag,
-              MPIR_Comm * comm_ptr, MPI_Status * status)
+// int MPIC_Recv(void *buf, MPI_Aint count, MPI_Datatype datatype, int source, int tag,
+//               MPIR_Comm * comm_ptr, MPI_Status * status)
+// {
+//     int mpi_errno = MPI_SUCCESS;
+//     int attr = 0;
+//     MPI_Status mystatus;
+//     MPIR_Request *request_ptr = NULL;
+
+//     MPIR_FUNC_ENTER;
+
+//     MPIR_DATATYPE_ASSERT_BUILTIN(datatype);
+
+//     /* Return immediately for dummy process */
+//     if (unlikely(source == MPI_PROC_NULL)) {
+//         MPIR_Status_set_procnull(status);
+//         goto fn_exit;
+//     }
+
+//     MPIR_ERR_CHKANDJUMP1((count < 0), mpi_errno, MPI_ERR_COUNT,
+//                          "**countneg", "**countneg %d", count);
+
+//     MPIR_PT2PT_ATTR_SET_CONTEXT_OFFSET(attr, MPIR_CONTEXT_COLL_OFFSET);
+
+//     if (status == MPI_STATUS_IGNORE)
+//         status = &mystatus;
+
+//     DO_MPID_IRECV(buf, count, datatype, source, tag, comm_ptr, attr, &request_ptr);
+//     MPIR_ERR_CHECK(mpi_errno);
+//     if (request_ptr) {
+//         mpi_errno = MPIC_Wait(request_ptr);
+//         MPIR_ERR_CHECK(mpi_errno);
+
+//         *status = request_ptr->status;
+//         mpi_errno = status->MPI_ERROR;
+//         MPIR_Request_free(request_ptr);
+//     }
+
+//   fn_exit:
+//     MPIR_FUNC_EXIT;
+//     return mpi_errno;
+//   fn_fail:
+//     /* --BEGIN ERROR HANDLING-- */
+//     if (mpi_errno == MPIX_ERR_NOREQ)
+//         MPIR_ERR_SET(mpi_errno, MPI_ERR_OTHER, "**nomem");
+//     if (request_ptr)
+//         MPIR_Request_free(request_ptr);
+//     goto fn_exit;
+//     /* --END ERROR HANDLING-- */
+// }
+
+// int MPIC_Sendrecv(const void *sendbuf, MPI_Aint sendcount, MPI_Datatype sendtype,
+//                   int dest, int sendtag, void *recvbuf, MPI_Aint recvcount,
+//                   MPI_Datatype recvtype, int source, int recvtag,
+//                   MPIR_Comm * comm_ptr, MPI_Status * status, MPIR_Errflag_t errflag)
+// {
+//     int mpi_errno = MPI_SUCCESS;
+//     int attr = 0;
+//     MPI_Status mystatus;
+//     MPIR_Request *recv_req_ptr = NULL, *send_req_ptr = NULL;
+
+//     MPIR_FUNC_ENTER;
+
+//     MPIR_DATATYPE_ASSERT_BUILTIN(sendtype);
+//     MPIR_DATATYPE_ASSERT_BUILTIN(recvtype);
+
+//     MPIR_ERR_CHKANDJUMP1((sendcount < 0), mpi_errno, MPI_ERR_COUNT,
+//                          "**countneg", "**countneg %d", sendcount);
+//     MPIR_ERR_CHKANDJUMP1((recvcount < 0), mpi_errno, MPI_ERR_COUNT,
+//                          "**countneg", "**countneg %d", recvcount);
+
+//     MPIR_PT2PT_ATTR_SET_CONTEXT_OFFSET(attr, MPIR_CONTEXT_COLL_OFFSET);
+
+//     if (status == MPI_STATUS_IGNORE)
+//         status = &mystatus;
+
+//     /* If source is MPI_PROC_NULL, create a completed request and return. */
+//     if (unlikely(source == MPI_PROC_NULL)) {
+//         recv_req_ptr = MPIR_Request_create_complete(MPIR_REQUEST_KIND__RECV);
+//         MPIR_ERR_CHKANDSTMT(recv_req_ptr == NULL, mpi_errno, MPIX_ERR_NOREQ, goto fn_fail,
+//                             "**nomemreq");
+//         MPIR_Status_set_procnull(&recv_req_ptr->status);
+//     } else {
+//         DO_MPID_IRECV(recvbuf, recvcount, recvtype, source, recvtag, comm_ptr, attr, &recv_req_ptr);
+//         MPIR_ERR_CHECK(mpi_errno);
+//     }
+
+//     /* If dest is MPI_PROC_NULL, create a completed request and return. */
+//     if (unlikely(dest == MPI_PROC_NULL)) {
+//         send_req_ptr = MPIR_Request_create_complete(MPIR_REQUEST_KIND__SEND);
+//         MPIR_ERR_CHKANDSTMT(send_req_ptr == NULL, mpi_errno, MPIX_ERR_NOREQ, goto fn_fail,
+//                             "**nomemreq");
+//     } else {
+//         MPIR_PT2PT_ATTR_SET_ERRFLAG(attr, errflag);
+//         DO_MPID_ISEND(sendbuf, sendcount, sendtype, dest, sendtag, comm_ptr, attr, &send_req_ptr);
+//         MPIR_ERR_CHECK(mpi_errno);
+//     }
+
+//     mpi_errno = MPIC_Wait(send_req_ptr);
+//     MPIR_ERR_CHECK(mpi_errno);
+//     mpi_errno = MPIC_Wait(recv_req_ptr);
+//     if (mpi_errno)
+//         MPIR_ERR_POPFATAL(mpi_errno);
+
+//     *status = recv_req_ptr->status;
+
+//     if (mpi_errno == MPI_SUCCESS) {
+//         mpi_errno = recv_req_ptr->status.MPI_ERROR;
+
+//         if (mpi_errno == MPI_SUCCESS) {
+//             mpi_errno = send_req_ptr->status.MPI_ERROR;
+//         }
+//     }
+
+//     MPIR_Request_free(send_req_ptr);
+//     MPIR_Request_free(recv_req_ptr);
+
+//   fn_exit:
+//     MPIR_FUNC_EXIT;
+//     return mpi_errno;
+//   fn_fail:
+//     if (mpi_errno == MPIX_ERR_NOREQ)
+//         MPIR_ERR_SET(mpi_errno, MPI_ERR_OTHER, "**nomem");
+//     if (send_req_ptr)
+//         MPIR_Request_free(send_req_ptr);
+//     if (recv_req_ptr)
+//         MPIR_Request_free(recv_req_ptr);
+//     goto fn_exit;
+// }
+
+/* MPIC_Recv with blocking semantics + potential GPU decompression. */
+int MPIC_Recv(void *buf, MPI_Aint count, MPI_Datatype datatype,
+    int source, int tag, MPIR_Comm * comm_ptr, MPI_Status * status)
 {
     int mpi_errno = MPI_SUCCESS;
     int attr = 0;
@@ -184,120 +383,79 @@ int MPIC_Recv(void *buf, MPI_Aint count, MPI_Datatype datatype, int source, int 
 
     MPIR_DATATYPE_ASSERT_BUILTIN(datatype);
 
-    /* Return immediately for dummy process */
     if (unlikely(source == MPI_PROC_NULL)) {
-        MPIR_Status_set_procnull(status);
-        goto fn_exit;
+    MPIR_Status_set_procnull(status);
+    goto fn_exit;
     }
 
     MPIR_ERR_CHKANDJUMP1((count < 0), mpi_errno, MPI_ERR_COUNT,
-                         "**countneg", "**countneg %d", count);
+                "**countneg", "**countneg %d", count);
 
     MPIR_PT2PT_ATTR_SET_CONTEXT_OFFSET(attr, MPIR_CONTEXT_COLL_OFFSET);
 
     if (status == MPI_STATUS_IGNORE)
-        status = &mystatus;
+    status = &mystatus;
 
-    DO_MPID_IRECV(buf, count, datatype, source, tag, comm_ptr, attr, &request_ptr);
-    MPIR_ERR_CHECK(mpi_errno);
-    if (request_ptr) {
-        mpi_errno = MPIC_Wait(request_ptr);
+    bool on_gpu = is_buffer_on_gpu(buf);
+    cuszp_type_t czp_dtype = get_cuszp_datatype(datatype);
+    if (on_gpu && czp_dtype != (cuszp_type_t) -1 && count > 0) {
+        /* We'll do an Irecv to a large host buffer, then decompress to GPU. */
+        size_t max_size = guess_max_compressed_bytes((size_t) count, czp_dtype);
+        unsigned char *host_buffer = (unsigned char *) malloc(max_size);
+
+        /* irecv: we don't know the exact compressed size, so we guess. */
+        DO_MPID_IRECV(host_buffer, max_size, MPI_BYTE, source, tag, comm_ptr, attr, &request_ptr);
         MPIR_ERR_CHECK(mpi_errno);
 
-        *status = request_ptr->status;
-        mpi_errno = status->MPI_ERROR;
-        MPIR_Request_free(request_ptr);
-    }
+        if (request_ptr) {
+            mpi_errno = MPIC_Wait(request_ptr);
+            MPIR_ERR_CHECK(mpi_errno);
 
-  fn_exit:
+            *status = request_ptr->status;
+            mpi_errno = status->MPI_ERROR;
+            MPIR_Request_free(request_ptr);
+            request_ptr = NULL;
+        }
+
+        /* The actual bytes are in status->count. */
+        int recv_bytes = 0;
+        MPIR_Get_count_impl(status, MPI_BYTE, &recv_bytes);
+        if (recv_bytes < 0) {
+            free(host_buffer);
+            goto fn_fail;
+        }
+
+        /* Decompress to buf (GPU). */
+        int rc = decompress_gpu(buf, (size_t) count, czp_dtype,
+                                host_buffer, (size_t) recv_bytes);
+        free(host_buffer);
+        if (rc != 0) {
+            goto fn_fail;
+        }
+        goto fn_exit;
+    } else {
+        /* Normal CPU path */
+        DO_MPID_IRECV(buf, count, datatype, source, tag, comm_ptr, attr, &request_ptr);
+        MPIR_ERR_CHECK(mpi_errno);
+
+        if (request_ptr) {
+            mpi_errno = MPIC_Wait(request_ptr);
+            MPIR_ERR_CHECK(mpi_errno);
+
+            *status = request_ptr->status;
+            mpi_errno = status->MPI_ERROR;
+            MPIR_Request_free(request_ptr);
+        }
+    }
+fn_exit:
     MPIR_FUNC_EXIT;
     return mpi_errno;
-  fn_fail:
-    /* --BEGIN ERROR HANDLING-- */
+fn_fail:
+    /* error handling */
     if (mpi_errno == MPIX_ERR_NOREQ)
         MPIR_ERR_SET(mpi_errno, MPI_ERR_OTHER, "**nomem");
     if (request_ptr)
         MPIR_Request_free(request_ptr);
-    goto fn_exit;
-    /* --END ERROR HANDLING-- */
-}
-
-int MPIC_Sendrecv(const void *sendbuf, MPI_Aint sendcount, MPI_Datatype sendtype,
-                  int dest, int sendtag, void *recvbuf, MPI_Aint recvcount,
-                  MPI_Datatype recvtype, int source, int recvtag,
-                  MPIR_Comm * comm_ptr, MPI_Status * status, MPIR_Errflag_t errflag)
-{
-    int mpi_errno = MPI_SUCCESS;
-    int attr = 0;
-    MPI_Status mystatus;
-    MPIR_Request *recv_req_ptr = NULL, *send_req_ptr = NULL;
-
-    MPIR_FUNC_ENTER;
-
-    MPIR_DATATYPE_ASSERT_BUILTIN(sendtype);
-    MPIR_DATATYPE_ASSERT_BUILTIN(recvtype);
-
-    MPIR_ERR_CHKANDJUMP1((sendcount < 0), mpi_errno, MPI_ERR_COUNT,
-                         "**countneg", "**countneg %d", sendcount);
-    MPIR_ERR_CHKANDJUMP1((recvcount < 0), mpi_errno, MPI_ERR_COUNT,
-                         "**countneg", "**countneg %d", recvcount);
-
-    MPIR_PT2PT_ATTR_SET_CONTEXT_OFFSET(attr, MPIR_CONTEXT_COLL_OFFSET);
-
-    if (status == MPI_STATUS_IGNORE)
-        status = &mystatus;
-
-    /* If source is MPI_PROC_NULL, create a completed request and return. */
-    if (unlikely(source == MPI_PROC_NULL)) {
-        recv_req_ptr = MPIR_Request_create_complete(MPIR_REQUEST_KIND__RECV);
-        MPIR_ERR_CHKANDSTMT(recv_req_ptr == NULL, mpi_errno, MPIX_ERR_NOREQ, goto fn_fail,
-                            "**nomemreq");
-        MPIR_Status_set_procnull(&recv_req_ptr->status);
-    } else {
-        DO_MPID_IRECV(recvbuf, recvcount, recvtype, source, recvtag, comm_ptr, attr, &recv_req_ptr);
-        MPIR_ERR_CHECK(mpi_errno);
-    }
-
-    /* If dest is MPI_PROC_NULL, create a completed request and return. */
-    if (unlikely(dest == MPI_PROC_NULL)) {
-        send_req_ptr = MPIR_Request_create_complete(MPIR_REQUEST_KIND__SEND);
-        MPIR_ERR_CHKANDSTMT(send_req_ptr == NULL, mpi_errno, MPIX_ERR_NOREQ, goto fn_fail,
-                            "**nomemreq");
-    } else {
-        MPIR_PT2PT_ATTR_SET_ERRFLAG(attr, errflag);
-        DO_MPID_ISEND(sendbuf, sendcount, sendtype, dest, sendtag, comm_ptr, attr, &send_req_ptr);
-        MPIR_ERR_CHECK(mpi_errno);
-    }
-
-    mpi_errno = MPIC_Wait(send_req_ptr);
-    MPIR_ERR_CHECK(mpi_errno);
-    mpi_errno = MPIC_Wait(recv_req_ptr);
-    if (mpi_errno)
-        MPIR_ERR_POPFATAL(mpi_errno);
-
-    *status = recv_req_ptr->status;
-
-    if (mpi_errno == MPI_SUCCESS) {
-        mpi_errno = recv_req_ptr->status.MPI_ERROR;
-
-        if (mpi_errno == MPI_SUCCESS) {
-            mpi_errno = send_req_ptr->status.MPI_ERROR;
-        }
-    }
-
-    MPIR_Request_free(send_req_ptr);
-    MPIR_Request_free(recv_req_ptr);
-
-  fn_exit:
-    MPIR_FUNC_EXIT;
-    return mpi_errno;
-  fn_fail:
-    if (mpi_errno == MPIX_ERR_NOREQ)
-        MPIR_ERR_SET(mpi_errno, MPI_ERR_OTHER, "**nomem");
-    if (send_req_ptr)
-        MPIR_Request_free(send_req_ptr);
-    if (recv_req_ptr)
-        MPIR_Request_free(recv_req_ptr);
     goto fn_exit;
 }
 

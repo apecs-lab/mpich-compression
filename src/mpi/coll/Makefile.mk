@@ -72,5 +72,6 @@ noinst_HEADERS +=                    \
     src/mpi/coll/include/coll_impl.h
 
 # === cuSZp integration ===
-AM_CPPFLAGS += @CUSZP_CPPFLAGS@
-AM_LDFLAGS = @CUSZP_LDFLAGS@
+AM_CPPFLAGS += -I/work/10127/jwang259/ls6/sw/cuszp-symlink/include
+AM_LDFLAGS += -L/work/10127/jwang259/ls6/sw/cuszp-symlink/lib64 -lcuSZp
+
