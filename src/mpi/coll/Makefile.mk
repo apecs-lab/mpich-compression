@@ -70,3 +70,9 @@ mpi_core_sources += \
 
 noinst_HEADERS +=                    \
     src/mpi/coll/include/coll_impl.h
+
+AM_LDFLAGS =
+LDADD =
+
+AM_CPPFLAGS += -I/grand/sbi-fair/Jiamin/sw/SZp/install/include
+LDADD += -L/grand/sbi-fair/Jiamin/sw/SZp/install/lib -lSZp
