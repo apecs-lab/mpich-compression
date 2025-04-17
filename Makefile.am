@@ -700,3 +700,10 @@ SUFFIXES += .i
 
 .c.i:
 	$(COMPILE) -CC -E -o $@ $<
+
+# === cuSZp integration ===
+AM_LDFLAGS += -L/grand/sbi-fair/Jiamin/sw/cuSZp/install/lib64 \
+              -Wl,-rpath,/grand/sbi-fair/Jiamin/sw/cuSZp/install/lib64
+LIBS += -lcuszp -lcudart -lcuda -ldl
+
+

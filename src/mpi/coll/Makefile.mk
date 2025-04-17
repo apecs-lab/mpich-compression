@@ -71,7 +71,23 @@ mpi_core_sources += \
 noinst_HEADERS +=                    \
     src/mpi/coll/include/coll_impl.h
 
-# === cuSZp integration ===
-AM_CPPFLAGS += -I/work/10127/jwang259/ls6/sw/cuszp-symlink/include
-AM_LDFLAGS += -L/work/10127/jwang259/ls6/sw/cuszp-symlink/lib64 -lcuSZp
+AM_LDFLAGS =
+LIBS = 
+
+# === cuSZp integration on Sophia ===
+AM_CPPFLAGS += \
+    -I/grand/sbi-fair/Jiamin/sw/cuSZp/install/include \
+    -I/usr/local/cuda/include
+
+AM_LDFLAGS += \
+    -L/grand/sbi-fair/Jiamin/sw/cuSZp/install/lib64 \
+    -L/usr/local/cuda/lib64 \
+    -Wl,-rpath,/grand/sbi-fair/Jiamin/sw/cuSZp/install/lib64:/usr/local/cuda/lib64 \
+    -Wl,--no-as-needed
+
+LIBS += -lcuszp -lcudart -lcuda -ldl
+
+
+
+
 
