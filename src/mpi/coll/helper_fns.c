@@ -12,7 +12,7 @@
 /* These functions are used in the implementation of collective
    operations. They are wrappers around MPID send/recv functions. They do
    sends/receives by setting the context offset MPIR_CONTEXT_COLL_OFFSET.
- */
+ */ 
 
 #ifdef ENABLE_THREADCOMM
 #define DO_MPID_ISEND(buf, count, datatype, dest, tag, comm_ptr, attr, req) \
