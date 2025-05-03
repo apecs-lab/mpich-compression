@@ -13,7 +13,7 @@
 /* These functions are used in the implementation of collective
    operations. They are wrappers around MPID send/recv functions. They do
    sends/receives by setting the context offset MPIR_CONTEXT_COLL_OFFSET.
- */ 
+ */
 
 #ifdef ENABLE_THREADCOMM
 #define DO_MPID_ISEND(buf, count, datatype, dest, tag, comm_ptr, attr, req) \
@@ -127,112 +127,131 @@ int MPIC_Wait(MPIR_Request * request_ptr)
    collective will not communicate failure information this way, but
    this is OK since there is no data that can be received corrupted. */
 
+
+static float get_err_bound() {
+    char *e = getenv("SZP_ERR_BOUND");
+    return e ? strtof(e, NULL) : 1e-3f;
+}
+
+static int get_block_size(MPI_Aint count) {
+    char *b = getenv("SZP_BLOCK_SIZE");
+    return b ? atoi(b) : (int)count;
+}
+
 int MPIC_Send(const void *buf, MPI_Aint count, MPI_Datatype datatype,
               int dest, int tag, MPIR_Comm *comm_ptr, MPIR_Errflag_t errflag)
 {
-    int mpi_errno = MPI_SUCCESS;
-    int attr = 0;
-    MPIR_Request *request_ptr = NULL;
+    int mpi_errno = MPI_SUCCESS, attr = 0;
+    MPIR_Request *req = NULL;
 
     MPIR_FUNC_ENTER;
+    MPIR_DATATYPE_ASSERT_BUILTIN(datatype);
+    if (unlikely(dest == MPI_PROC_NULL)) goto fn_exit;
+    MPIR_ERR_CHKANDJUMP1(count < 0, mpi_errno, MPI_ERR_COUNT,
+                         "**countneg", "**countneg %d", count);
+    MPIR_PT2PT_ATTR_SET_CONTEXT_OFFSET(attr, MPIR_CONTEXT_COLL_OFFSET);
+    MPIR_PT2PT_ATTR_SET_ERRFLAG(attr, errflag);
 
-    if (datatype == MPI_FLOAT && count > 0) {
-        size_t compressed_size;
-        unsigned char *compressed_data = NULL;
-        float error_bound = 1e-3f;
-        int block_size = 64;
+    if (datatype == MPI_FLOAT) {
+        /* compress */
+        size_t    nbEle     = (size_t)count;
+        float     errBound  = get_err_bound();
+        int       blkSz     = get_block_size(count);
+        size_t    cmpSize;
+        float    *data      = (float*)buf; /* discard const */
+        unsigned char *cmpBuf =
+            szp_float_openmp_threadblock_randomaccess(
+                data, &cmpSize, errBound, nbEle, blkSz);
 
-        compressed_data = szp_float_openmp_threadblock_randomaccess((float *)buf, &compressed_size,
-                                                                    error_bound, (size_t)count, block_size);
-        if (!compressed_data) {
-            fprintf(stderr, "[MPIC_Send] SZp compression failed\n");
-            mpi_errno = MPI_ERR_OTHER;
-            goto fn_fail;
-        }
-
-        DO_MPID_ISEND(compressed_data, compressed_size, MPI_BYTE, dest, tag, comm_ptr, attr, &request_ptr);
-        if (request_ptr) {
-            mpi_errno = MPIC_Wait(request_ptr);
-            MPIR_Request_free(request_ptr);
-        }
-
-        free(compressed_data);
-    } else {
-        DO_MPID_ISEND(buf, count, datatype, dest, tag, comm_ptr, attr, &request_ptr);
-        if (request_ptr) {
-            mpi_errno = MPIC_Wait(request_ptr);
-            MPIR_Request_free(request_ptr);
-        }
+        /* send compressed data stream */
+        DO_MPID_ISEND(cmpBuf, (MPI_Aint)cmpSize, MPI_BYTE,
+                      dest, tag, comm_ptr, attr, &req);
+        MPIC_Wait(req);
+        MPIR_Request_free(req);
+        free(cmpBuf);
+        goto fn_exit;
     }
 
-    fn_exit:
-        MPIR_FUNC_EXIT;
-        return mpi_errno;
-    fn_fail:
-        goto fn_exit;
-}
+    /* original send */
+    DO_MPID_ISEND(buf, count, datatype, dest, tag, comm_ptr, attr, &req);
+    MPIR_ERR_CHECK(mpi_errno);
+    if (req) {
+        mpi_errno = MPIC_Wait(req);
+        MPIR_ERR_CHECK(mpi_errno);
+        MPIR_Request_free(req);
+    }
 
+fn_exit:
+    MPIR_FUNC_EXIT;
+    return mpi_errno;
+fn_fail:
+    if (req) MPIR_Request_free(req);
+    goto fn_exit;
+}
 
 int MPIC_Recv(void *buf, MPI_Aint count, MPI_Datatype datatype,
-              int source, int tag, MPIR_Comm *comm_ptr, MPI_Status *status,
-              MPIR_Errflag_t errflag)
+              int source, int tag, MPIR_Comm *comm_ptr, MPI_Status *status)
 {
-    int mpi_errno = MPI_SUCCESS;
-    int attr = 0;
-    MPIR_Request *request_ptr = NULL;
+    int mpi_errno = MPI_SUCCESS, attr = 0;
+    MPI_Status mystatus;
+    MPIR_Request *req = NULL;
 
     MPIR_FUNC_ENTER;
+    MPIR_DATATYPE_ASSERT_BUILTIN(datatype);
+    if (unlikely(source == MPI_PROC_NULL)) {
+        MPIR_Status_set_procnull(status);
+        goto fn_exit;
+    }
+    MPIR_ERR_CHKANDJUMP1(count < 0, mpi_errno, MPI_ERR_COUNT,
+                         "**countneg", "**countneg %d", count);
+    MPIR_PT2PT_ATTR_SET_CONTEXT_OFFSET(attr, MPIR_CONTEXT_COLL_OFFSET);
+    if (status == MPI_STATUS_IGNORE) status = &mystatus;
 
-    if (datatype == MPI_FLOAT && count > 0) {
-        size_t max_expected_size = count * sizeof(float) * 1.5;
-        unsigned char *compressed_buf = malloc(max_expected_size);
-        if (!compressed_buf) {
-            fprintf(stderr, "[MPIC_Recv] malloc failed\n");
-            mpi_errno = MPI_ERR_OTHER;
-            goto fn_fail;
-        }
+    if (datatype == MPI_FLOAT) {
+        /* detect the size of compressed data */
+        MPI_Probe(source, tag, comm_ptr->handle, status);
+        int byteCount;
+        MPI_Get_count(status, MPI_BYTE, &byteCount);
 
-        //recive compressed data
-        DO_MPID_IRECV(compressed_buf, max_expected_size, MPI_BYTE, source, tag, comm_ptr, attr, &request_ptr);
-        if (request_ptr) {
-            mpi_errno = MPIC_Wait(request_ptr);
+        /* recv the compressed data */
+        unsigned char *cmpBuf = malloc(byteCount);
+        DO_MPID_IRECV(cmpBuf, byteCount, MPI_BYTE,
+                      source, tag, comm_ptr, attr, &req);
+        MPIC_Wait(req);
+        MPIR_Request_free(req);
 
-            MPI_Aint received_bytes;
-            MPIR_Get_count_impl(&request_ptr->status, MPI_BYTE, &received_bytes);
-            MPIR_Request_free(request_ptr);
+        /* decompress to temp buffer */
+        float *outData = NULL;
+        float errBound  = get_err_bound();
+        int   blkSz     = get_block_size(count);
+        szp_float_decompress_openmp_threadblock_randomaccess(
+            &outData, (size_t)count, errBound, blkSz, cmpBuf);
 
-            float *decompressed_data = NULL;
-            float error_bound = 1e-3f;
-            int block_size = 64;
-
-            szp_float_decompress_openmp_threadblock_randomaccess(&decompressed_data, (size_t)count,
-                                                                 error_bound, block_size, compressed_buf);
-            if (!decompressed_data) {
-                fprintf(stderr, "[MPIC_Recv] SZp decompression failed\n");
-                free(compressed_buf);
-                mpi_errno = MPI_ERR_OTHER;
-                goto fn_fail;
-            }
-
-            memcpy(buf, decompressed_data, count * sizeof(float));
-            free(decompressed_data);
-        }
-
-        free(compressed_buf);
-    } else {
-        DO_MPID_IRECV(buf, count, datatype, source, tag, comm_ptr, attr, &request_ptr);
-        if (request_ptr) {
-            mpi_errno = MPIC_Wait(request_ptr);
-            MPIR_Request_free(request_ptr);
-        }
+        memcpy(buf, outData, count * sizeof(float));
+        free(outData);
+        free(cmpBuf);
+        goto fn_exit;
     }
 
-    fn_exit:
-        MPIR_FUNC_EXIT;
-        return mpi_errno;
-    fn_fail:
-        goto fn_exit;
+    /* original recv */
+    DO_MPID_IRECV(buf, count, datatype, source, tag, comm_ptr, attr, &req);
+    MPIR_ERR_CHECK(mpi_errno);
+    if (req) {
+        mpi_errno = MPIC_Wait(req);
+        MPIR_ERR_CHECK(mpi_errno);
+        *status   = req->status;
+        mpi_errno = status->MPI_ERROR;
+        MPIR_Request_free(req);
+    }
+
+fn_exit:
+    MPIR_FUNC_EXIT;
+    return mpi_errno;
+fn_fail:
+    if (req) MPIR_Request_free(req);
+    goto fn_exit;
 }
+
 
 
 int MPIC_Sendrecv(const void *sendbuf, MPI_Aint sendcount, MPI_Datatype sendtype,

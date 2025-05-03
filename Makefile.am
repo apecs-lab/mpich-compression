@@ -5,10 +5,19 @@
 
 ACLOCAL_AMFLAGS = -I confdb
 
+# --- SZp support ---
+SZP_ROOT   = /grand/sbi-fair/Jiamin/sw/SZp/install
+SZP_CPPFLAGS = -I$(SZP_ROOT)/include
+SZP_LIBADD     = -L$(SZP_ROOT)/lib -lszp -lm
+AM_LDFLAGS    = 
+
+# ------------------
+
+
 # automake requires that we initialize variables to something, even just empty,
 # before appending to them with "+="
 AM_CFLAGS = @VISIBILITY_CFLAGS@
-AM_CPPFLAGS =
+AM_CPPFLAGS = @VISIBILITY_CFLAGS@ $(SZP_CPPFLAGS)
 AM_FFLAGS =
 AM_FCFLAGS =
 include_HEADERS =
@@ -134,29 +143,46 @@ include maint/Makefile.mk
 include src/Makefile.mk
 
 if BUILD_PROFILING_LIB
-lib_LTLIBRARIES += lib/lib@PMPILIBNAME@.la
-lib_lib@PMPILIBNAME@_la_SOURCES = $(mpi_sources) $(mpi_core_sources)
-lib_lib@PMPILIBNAME@_la_LDFLAGS = $(external_ldflags) $(ABIVERSIONFLAGS)
-lib_lib@PMPILIBNAME@_la_LIBADD = $(external_libs) $(pmpi_convenience_libs) $(mpi_convenience_libs)
-EXTRA_lib_lib@PMPILIBNAME@_la_DEPENDENCIES = $(pmpi_convenience_libs) $(mpi_convenience_libs)
+  # Profiling (PMPI) library
+  lib_LTLIBRARIES += lib/lib@PMPILIBNAME@.la
+  lib_lib@PMPILIBNAME@_la_SOURCES     = $(mpi_sources) $(mpi_core_sources)
+  lib_lib@PMPILIBNAME@_la_LDFLAGS     = $(external_ldflags) $(ABIVERSIONFLAGS)
+  lib_lib@PMPILIBNAME@_la_LIBADD      = \
+      $(external_libs) \
+      $(pmpi_convenience_libs) \
+      $(mpi_convenience_libs)
+  EXTRA_lib_lib@PMPILIBNAME@_la_DEPENDENCIES = \
+      $(pmpi_convenience_libs) \
+      $(mpi_convenience_libs)
 
 # lib@MPILIBNAME@.la might depend on lib@PMPILIBNAME@.la.  We add them
 # in that order to lib_LTLIBRARIES so libtool doesn't get
 # confused. (see https://bugzilla.redhat.com/show_bug.cgi?id=91110)
-lib_LTLIBRARIES += lib/lib@MPILIBNAME@.la
-lib_lib@MPILIBNAME@_la_SOURCES = $(mpi_sources)
-lib_lib@MPILIBNAME@_la_LDFLAGS = $(ABIVERSIONFLAGS)
-lib_lib@MPILIBNAME@_la_CPPFLAGS = $(AM_CPPFLAGS) -DMPICH_MPI_FROM_PMPI
-lib_lib@MPILIBNAME@_la_LIBADD = lib/lib@PMPILIBNAME@.la
+  lib_LTLIBRARIES += lib/lib@MPILIBNAME@.la
+  lib_lib@MPILIBNAME@_la_SOURCES      = $(mpi_sources)
+  lib_lib@MPILIBNAME@_la_CPPFLAGS     = $(AM_CPPFLAGS) -DMPICH_MPI_FROM_PMPI
+  lib_lib@MPILIBNAME@_la_LDFLAGS      = $(ABIVERSIONFLAGS) -fopenmp
+  lib_lib@MPILIBNAME@_la_LIBADD       = \
+      lib/lib@PMPILIBNAME@.la \
+      $(external_libs) \
+      $(pmpi_convenience_libs) \
+      $(mpi_convenience_libs) \
+      $(SZP_LIBADD)
 
 else !BUILD_PROFILING_LIB
 
-lib_LTLIBRARIES += lib/lib@MPILIBNAME@.la
-lib_lib@MPILIBNAME@_la_SOURCES = $(mpi_sources) $(mpi_core_sources)
-lib_lib@MPILIBNAME@_la_LDFLAGS = $(external_ldflags) $(ABIVERSIONFLAGS)
-lib_lib@MPILIBNAME@_la_CPPFLAGS = $(AM_CPPFLAGS)
-lib_lib@MPILIBNAME@_la_LIBADD = $(external_libs) $(pmpi_convenience_libs) $(mpi_convenience_libs)
-EXTRA_lib_lib@MPILIBNAME@_la_DEPENDENCIES = $(pmpi_convenience_libs) $(mpi_convenience_libs)
+  lib_LTLIBRARIES += lib/lib@MPILIBNAME@.la
+  lib_lib@MPILIBNAME@_la_SOURCES      = $(mpi_sources) $(mpi_core_sources)
+  lib_lib@MPILIBNAME@_la_CPPFLAGS     = $(AM_CPPFLAGS)
+  lib_lib@MPILIBNAME@_la_LDFLAGS      = $(external_ldflags) $(ABIVERSIONFLAGS) -fopenmp
+  lib_lib@MPILIBNAME@_la_LIBADD       = \
+      $(external_libs) \
+      $(pmpi_convenience_libs) \
+      $(mpi_convenience_libs) \
+      $(SZP_LIBADD)
+  EXTRA_lib_lib@MPILIBNAME@_la_DEPENDENCIES = \
+      $(pmpi_convenience_libs) \
+      $(mpi_convenience_libs)
 
 endif !BUILD_PROFILING_LIB
 

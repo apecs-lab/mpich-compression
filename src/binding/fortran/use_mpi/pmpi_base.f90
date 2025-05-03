@@ -270,7 +270,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Allgather
         SUBROUTINE PMPI_Allgather(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -286,7 +286,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Allgather_init(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, comm, &
                                        info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -304,7 +304,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Allgatherv(sendbuf, sendcount, sendtype, recvbuf, recvcounts, displs, recvtype, &
                                    comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -321,7 +321,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Allgatherv_init(sendbuf, sendcount, sendtype, recvbuf, recvcounts, displs, recvtype, &
                                         comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -339,7 +339,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Allreduce
         SUBROUTINE PMPI_Allreduce(sendbuf, recvbuf, count, datatype, op, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -353,7 +353,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Allreduce_init
         SUBROUTINE PMPI_Allreduce_init(sendbuf, recvbuf, count, datatype, op, comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -369,7 +369,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Alltoall
         SUBROUTINE PMPI_Alltoall(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -385,7 +385,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Alltoall_init(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, comm, &
                                       info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -403,7 +403,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Alltoallv(sendbuf, sendcounts, sdispls, sendtype, recvbuf, recvcounts, rdispls, &
                                   recvtype, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: sdispls(*)
@@ -421,7 +421,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Alltoallv_init(sendbuf, sendcounts, sdispls, sendtype, recvbuf, recvcounts, rdispls, &
                                        recvtype, comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: sdispls(*)
@@ -441,7 +441,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Alltoallw(sendbuf, sendcounts, sdispls, sendtypes, recvbuf, recvcounts, rdispls, &
                                   recvtypes, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: sdispls(*)
@@ -459,7 +459,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Alltoallw_init(sendbuf, sendcounts, sdispls, sendtypes, recvbuf, recvcounts, &
                                        rdispls, recvtypes, comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: sdispls(*)
@@ -496,7 +496,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Bcast
         SUBROUTINE PMPI_Bcast(buffer, count, datatype, root, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buffer
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buffer
             REAL :: buffer
             INTEGER :: count
             INTEGER :: datatype
@@ -509,7 +509,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Bcast_init
         SUBROUTINE PMPI_Bcast_init(buffer, count, datatype, root, comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buffer
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buffer
             REAL :: buffer
             INTEGER :: count
             INTEGER :: datatype
@@ -524,7 +524,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Exscan
         SUBROUTINE PMPI_Exscan(sendbuf, recvbuf, count, datatype, op, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -538,7 +538,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Exscan_init
         SUBROUTINE PMPI_Exscan_init(sendbuf, recvbuf, count, datatype, op, comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -555,7 +555,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Gather(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, root, comm, &
                                ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -572,7 +572,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Gather_init(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, root, comm, &
                                     info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -591,7 +591,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Gatherv(sendbuf, sendcount, sendtype, recvbuf, recvcounts, displs, recvtype, root, &
                                 comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -609,7 +609,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Gatherv_init(sendbuf, sendcount, sendtype, recvbuf, recvcounts, displs, recvtype, &
                                      root, comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -629,7 +629,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Iallgather(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, comm, &
                                    request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -646,7 +646,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Iallgatherv(sendbuf, sendcount, sendtype, recvbuf, recvcounts, displs, recvtype, &
                                     comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -663,7 +663,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Iallreduce
         SUBROUTINE PMPI_Iallreduce(sendbuf, recvbuf, count, datatype, op, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -679,7 +679,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Ialltoall(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, comm, request, &
                                   ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -696,7 +696,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Ialltoallv(sendbuf, sendcounts, sdispls, sendtype, recvbuf, recvcounts, rdispls, &
                                    recvtype, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: sdispls(*)
@@ -715,7 +715,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Ialltoallw(sendbuf, sendcounts, sdispls, sendtypes, recvbuf, recvcounts, rdispls, &
                                    recvtypes, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: sdispls(*)
@@ -742,7 +742,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Ibcast
         SUBROUTINE PMPI_Ibcast(buffer, count, datatype, root, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buffer
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buffer
             REAL :: buffer
             INTEGER :: count
             INTEGER :: datatype
@@ -756,7 +756,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Iexscan
         SUBROUTINE PMPI_Iexscan(sendbuf, recvbuf, count, datatype, op, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -772,7 +772,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Igather(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, root, comm, &
                                 request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -790,7 +790,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Igatherv(sendbuf, sendcount, sendtype, recvbuf, recvcounts, displs, recvtype, root, &
                                  comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -809,7 +809,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Ineighbor_allgather(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, &
                                             comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -826,7 +826,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Ineighbor_allgatherv(sendbuf, sendcount, sendtype, recvbuf, recvcounts, displs, &
                                              recvtype, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -844,7 +844,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Ineighbor_alltoall(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, comm, &
                                            request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -861,7 +861,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Ineighbor_alltoallv(sendbuf, sendcounts, sdispls, sendtype, recvbuf, recvcounts, &
                                             rdispls, recvtype, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: sdispls(*)
@@ -881,7 +881,7 @@ MODULE pmpi_base
                                             rdispls, recvtypes, comm, request, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER(KIND=MPI_ADDRESS_KIND) :: sdispls(*)
@@ -899,7 +899,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Ireduce
         SUBROUTINE PMPI_Ireduce(sendbuf, recvbuf, count, datatype, op, root, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -915,7 +915,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Ireduce_scatter
         SUBROUTINE PMPI_Ireduce_scatter(sendbuf, recvbuf, recvcounts, datatype, op, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: recvcounts(*)
@@ -931,7 +931,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Ireduce_scatter_block(sendbuf, recvbuf, recvcount, datatype, op, comm, request, &
                                               ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: recvcount
@@ -946,7 +946,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Iscan
         SUBROUTINE PMPI_Iscan(sendbuf, recvbuf, count, datatype, op, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -962,7 +962,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Iscatter(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, root, comm, &
                                  request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -980,7 +980,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Iscatterv(sendbuf, sendcounts, displs, sendtype, recvbuf, recvcount, recvtype, root, &
                                   comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: displs(*)
@@ -999,7 +999,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Neighbor_allgather(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, comm, &
                                            ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -1015,7 +1015,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Neighbor_allgather_init(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, &
                                                 comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -1033,7 +1033,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Neighbor_allgatherv(sendbuf, sendcount, sendtype, recvbuf, recvcounts, displs, &
                                             recvtype, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -1050,7 +1050,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Neighbor_allgatherv_init(sendbuf, sendcount, sendtype, recvbuf, recvcounts, displs, &
                                                  recvtype, comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -1069,7 +1069,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Neighbor_alltoall(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, comm, &
                                           ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -1085,7 +1085,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Neighbor_alltoall_init(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, &
                                                comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -1103,7 +1103,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Neighbor_alltoallv(sendbuf, sendcounts, sdispls, sendtype, recvbuf, recvcounts, &
                                            rdispls, recvtype, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: sdispls(*)
@@ -1121,7 +1121,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Neighbor_alltoallv_init(sendbuf, sendcounts, sdispls, sendtype, recvbuf, recvcounts, &
                                                 rdispls, recvtype, comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: sdispls(*)
@@ -1142,7 +1142,7 @@ MODULE pmpi_base
                                            rdispls, recvtypes, comm, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER(KIND=MPI_ADDRESS_KIND) :: sdispls(*)
@@ -1162,7 +1162,7 @@ MODULE pmpi_base
                                                 ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER(KIND=MPI_ADDRESS_KIND) :: sdispls(*)
@@ -1181,7 +1181,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Reduce
         SUBROUTINE PMPI_Reduce(sendbuf, recvbuf, count, datatype, op, root, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -1197,7 +1197,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Reduce_init(sendbuf, recvbuf, count, datatype, op, root, comm, info, request, &
                                     ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -1214,7 +1214,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Reduce_local
         SUBROUTINE PMPI_Reduce_local(inbuf, inoutbuf, count, datatype, op, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR inbuf, inoutbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: inbuf, inoutbuf
             REAL :: inbuf
             REAL :: inoutbuf
             INTEGER :: count
@@ -1227,7 +1227,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Reduce_scatter
         SUBROUTINE PMPI_Reduce_scatter(sendbuf, recvbuf, recvcounts, datatype, op, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: recvcounts(*)
@@ -1241,7 +1241,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Reduce_scatter_block
         SUBROUTINE PMPI_Reduce_scatter_block(sendbuf, recvbuf, recvcount, datatype, op, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: recvcount
@@ -1256,7 +1256,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Reduce_scatter_block_init(sendbuf, recvbuf, recvcount, datatype, op, comm, info, &
                                                   request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: recvcount
@@ -1273,7 +1273,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Reduce_scatter_init(sendbuf, recvbuf, recvcounts, datatype, op, comm, info, request, &
                                             ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: recvcounts(*)
@@ -1289,7 +1289,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Scan
         SUBROUTINE PMPI_Scan(sendbuf, recvbuf, count, datatype, op, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -1303,7 +1303,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Scan_init
         SUBROUTINE PMPI_Scan_init(sendbuf, recvbuf, count, datatype, op, comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -1320,7 +1320,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Scatter(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, root, comm, &
                                 ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -1337,7 +1337,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Scatter_init(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, root, comm, &
                                      info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -1356,7 +1356,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Scatterv(sendbuf, sendcounts, displs, sendtype, recvbuf, recvcount, recvtype, root, &
                                  comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: displs(*)
@@ -1374,7 +1374,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Scatterv_init(sendbuf, sendcounts, displs, sendtype, recvbuf, recvcount, recvtype, &
                                       root, comm, info, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcounts(*)
             INTEGER :: displs(*)
@@ -1688,7 +1688,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Get_address(location, address, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR location
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: location
             REAL :: location
             INTEGER(KIND=MPI_ADDRESS_KIND) :: address
             INTEGER :: ierror
@@ -1731,7 +1731,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Pack
         SUBROUTINE PMPI_Pack(inbuf, incount, datatype, outbuf, outsize, position, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR inbuf, outbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: inbuf, outbuf
             REAL :: inbuf
             INTEGER :: incount
             INTEGER :: datatype
@@ -1747,7 +1747,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Pack_external(datarep, inbuf, incount, datatype, outbuf, outsize, position, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR inbuf, outbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: inbuf, outbuf
             CHARACTER*(*) :: datarep
             REAL :: inbuf
             INTEGER :: incount
@@ -2142,7 +2142,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Unpack
         SUBROUTINE PMPI_Unpack(inbuf, insize, position, outbuf, outcount, datatype, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR inbuf, outbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: inbuf, outbuf
             REAL :: inbuf
             INTEGER :: insize
             INTEGER :: position
@@ -2159,7 +2159,7 @@ MODULE pmpi_base
                                         ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR inbuf, outbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: inbuf, outbuf
             CHARACTER*(*) :: datarep
             REAL :: inbuf
             INTEGER(KIND=MPI_ADDRESS_KIND) :: insize
@@ -2175,7 +2175,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Address(location, address, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR location
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: location
             REAL :: location
             INTEGER(KIND=MPI_ADDRESS_KIND) :: address
             INTEGER :: ierror
@@ -2726,7 +2726,7 @@ MODULE pmpi_base
     INTERFACE PMPIX_Info_set_hex
         SUBROUTINE PMPIX_Info_set_hex(info, key, value, value_size, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR value
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: value
             INTEGER :: info
             CHARACTER*(*) :: key
             REAL :: value
@@ -3001,7 +3001,7 @@ MODULE pmpi_base
     INTERFACE PMPI_File_iread
         SUBROUTINE PMPI_File_iread(fh, buf, count, datatype, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3014,7 +3014,7 @@ MODULE pmpi_base
     INTERFACE PMPI_File_iread_all
         SUBROUTINE PMPI_File_iread_all(fh, buf, count, datatype, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3028,7 +3028,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_iread_at(fh, offset, buf, count, datatype, request, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             INTEGER(KIND=MPI_OFFSET_KIND) :: offset
             REAL :: buf
@@ -3043,7 +3043,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_iread_at_all(fh, offset, buf, count, datatype, request, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             INTEGER(KIND=MPI_OFFSET_KIND) :: offset
             REAL :: buf
@@ -3057,7 +3057,7 @@ MODULE pmpi_base
     INTERFACE PMPI_File_iread_shared
         SUBROUTINE PMPI_File_iread_shared(fh, buf, count, datatype, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3070,7 +3070,7 @@ MODULE pmpi_base
     INTERFACE PMPI_File_iwrite
         SUBROUTINE PMPI_File_iwrite(fh, buf, count, datatype, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3083,7 +3083,7 @@ MODULE pmpi_base
     INTERFACE PMPI_File_iwrite_all
         SUBROUTINE PMPI_File_iwrite_all(fh, buf, count, datatype, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3097,7 +3097,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_iwrite_at(fh, offset, buf, count, datatype, request, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             INTEGER(KIND=MPI_OFFSET_KIND) :: offset
             REAL :: buf
@@ -3112,7 +3112,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_iwrite_at_all(fh, offset, buf, count, datatype, request, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             INTEGER(KIND=MPI_OFFSET_KIND) :: offset
             REAL :: buf
@@ -3126,7 +3126,7 @@ MODULE pmpi_base
     INTERFACE PMPI_File_iwrite_shared
         SUBROUTINE PMPI_File_iwrite_shared(fh, buf, count, datatype, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3162,7 +3162,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_read(fh, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3176,7 +3176,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_read_all(fh, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3189,7 +3189,7 @@ MODULE pmpi_base
     INTERFACE PMPI_File_read_all_begin
         SUBROUTINE PMPI_File_read_all_begin(fh, buf, count, datatype, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3202,7 +3202,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_read_all_end(fh, buf, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: status(MPI_STATUS_SIZE)
@@ -3214,7 +3214,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_read_at(fh, offset, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND, MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             INTEGER(KIND=MPI_OFFSET_KIND) :: offset
             REAL :: buf
@@ -3229,7 +3229,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_read_at_all(fh, offset, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND, MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             INTEGER(KIND=MPI_OFFSET_KIND) :: offset
             REAL :: buf
@@ -3244,7 +3244,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_read_at_all_begin(fh, offset, buf, count, datatype, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             INTEGER(KIND=MPI_OFFSET_KIND) :: offset
             REAL :: buf
@@ -3258,7 +3258,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_read_at_all_end(fh, buf, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: status(MPI_STATUS_SIZE)
@@ -3270,7 +3270,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_read_ordered(fh, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3283,7 +3283,7 @@ MODULE pmpi_base
     INTERFACE PMPI_File_read_ordered_begin
         SUBROUTINE PMPI_File_read_ordered_begin(fh, buf, count, datatype, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3296,7 +3296,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_read_ordered_end(fh, buf, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: status(MPI_STATUS_SIZE)
@@ -3308,7 +3308,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_read_shared(fh, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3394,7 +3394,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_write(fh, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3408,7 +3408,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_write_all(fh, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3421,7 +3421,7 @@ MODULE pmpi_base
     INTERFACE PMPI_File_write_all_begin
         SUBROUTINE PMPI_File_write_all_begin(fh, buf, count, datatype, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3434,7 +3434,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_write_all_end(fh, buf, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: status(MPI_STATUS_SIZE)
@@ -3446,7 +3446,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_write_at(fh, offset, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND, MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             INTEGER(KIND=MPI_OFFSET_KIND) :: offset
             REAL :: buf
@@ -3461,7 +3461,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_write_at_all(fh, offset, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND, MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             INTEGER(KIND=MPI_OFFSET_KIND) :: offset
             REAL :: buf
@@ -3476,7 +3476,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_write_at_all_begin(fh, offset, buf, count, datatype, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             INTEGER(KIND=MPI_OFFSET_KIND) :: offset
             REAL :: buf
@@ -3490,7 +3490,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_write_at_all_end(fh, buf, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: status(MPI_STATUS_SIZE)
@@ -3502,7 +3502,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_write_ordered(fh, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3515,7 +3515,7 @@ MODULE pmpi_base
     INTERFACE PMPI_File_write_ordered_begin
         SUBROUTINE PMPI_File_write_ordered_begin(fh, buf, count, datatype, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3528,7 +3528,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_write_ordered_end(fh, buf, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: status(MPI_STATUS_SIZE)
@@ -3540,7 +3540,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_File_write_shared(fh, buf, count, datatype, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             INTEGER :: fh
             REAL :: buf
             INTEGER :: count
@@ -3712,7 +3712,7 @@ MODULE pmpi_base
                                    ierror)
             USE MPI_CONSTANTS, ONLY: MPI_COUNT_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: partitions
             INTEGER(KIND=MPI_COUNT_KIND) :: count
@@ -3731,7 +3731,7 @@ MODULE pmpi_base
                                    ierror)
             USE MPI_CONSTANTS, ONLY: MPI_COUNT_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: partitions
             INTEGER(KIND=MPI_COUNT_KIND) :: count
@@ -3748,7 +3748,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Bsend
         SUBROUTINE PMPI_Bsend(buf, count, datatype, dest, tag, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -3762,7 +3762,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Bsend_init
         SUBROUTINE PMPI_Bsend_init(buf, count, datatype, dest, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -3777,7 +3777,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Buffer_attach
         SUBROUTINE PMPI_Buffer_attach(buffer, size, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buffer
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buffer
             REAL :: buffer
             INTEGER :: size
             INTEGER :: ierror
@@ -3787,7 +3787,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Buffer_detach
         SUBROUTINE PMPI_Buffer_detach(buffer_addr, size, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buffer_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buffer_addr
             REAL :: buffer_addr
             INTEGER :: size
             INTEGER :: ierror
@@ -3812,7 +3812,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Comm_attach_buffer
         SUBROUTINE PMPI_Comm_attach_buffer(comm, buffer, size, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buffer
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buffer
             INTEGER :: comm
             REAL :: buffer
             INTEGER :: size
@@ -3823,7 +3823,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Comm_detach_buffer
         SUBROUTINE PMPI_Comm_detach_buffer(comm, buffer_addr, size, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buffer_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buffer_addr
             INTEGER :: comm
             REAL :: buffer_addr
             INTEGER :: size
@@ -3851,7 +3851,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Ibsend
         SUBROUTINE PMPI_Ibsend(buf, count, datatype, dest, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -3880,7 +3880,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Imrecv
         SUBROUTINE PMPI_Imrecv(buf, count, datatype, message, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -3906,7 +3906,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Irecv
         SUBROUTINE PMPI_Irecv(buf, count, datatype, source, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -3921,7 +3921,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Irsend
         SUBROUTINE PMPI_Irsend(buf, count, datatype, dest, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -3936,7 +3936,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Isend
         SUBROUTINE PMPI_Isend(buf, count, datatype, dest, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -3952,7 +3952,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Isendrecv(sendbuf, sendcount, sendtype, dest, sendtag, recvbuf, recvcount, recvtype, &
                                   source, recvtag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -3973,7 +3973,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Isendrecv_replace(buf, count, datatype, dest, sendtag, source, recvtag, comm, &
                                           request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -3990,7 +3990,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Issend
         SUBROUTINE PMPI_Issend(buf, count, datatype, dest, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4019,7 +4019,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Mrecv(buf, count, datatype, message, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4045,7 +4045,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Recv(buf, count, datatype, source, tag, comm, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4060,7 +4060,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Recv_init
         SUBROUTINE PMPI_Recv_init(buf, count, datatype, source, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4075,7 +4075,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Rsend
         SUBROUTINE PMPI_Rsend(buf, count, datatype, dest, tag, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4089,7 +4089,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Rsend_init
         SUBROUTINE PMPI_Rsend_init(buf, count, datatype, dest, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4104,7 +4104,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Send
         SUBROUTINE PMPI_Send(buf, count, datatype, dest, tag, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4118,7 +4118,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Send_init
         SUBROUTINE PMPI_Send_init(buf, count, datatype, dest, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4135,7 +4135,7 @@ MODULE pmpi_base
                                  source, recvtag, comm, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             INTEGER :: sendcount
             INTEGER :: sendtype
@@ -4157,7 +4157,7 @@ MODULE pmpi_base
                                          ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4174,7 +4174,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Session_attach_buffer
         SUBROUTINE PMPI_Session_attach_buffer(session, buffer, size, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buffer
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buffer
             INTEGER :: session
             REAL :: buffer
             INTEGER :: size
@@ -4185,7 +4185,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Session_detach_buffer
         SUBROUTINE PMPI_Session_detach_buffer(session, buffer_addr, size, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buffer_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buffer_addr
             INTEGER :: session
             REAL :: buffer_addr
             INTEGER :: size
@@ -4213,7 +4213,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Ssend
         SUBROUTINE PMPI_Ssend(buf, count, datatype, dest, tag, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4227,7 +4227,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Ssend_init
         SUBROUTINE PMPI_Ssend_init(buf, count, datatype, dest, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -4533,7 +4533,7 @@ MODULE pmpi_base
                                    target_count, target_datatype, op, win, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR origin_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: origin_addr
             REAL :: origin_addr
             INTEGER :: origin_count
             INTEGER :: origin_datatype
@@ -4572,7 +4572,7 @@ MODULE pmpi_base
                                          target_disp, win, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR origin_addr, compare_addr, result_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: origin_addr, compare_addr, result_addr
             REAL :: origin_addr
             REAL :: compare_addr
             REAL :: result_addr
@@ -4589,7 +4589,7 @@ MODULE pmpi_base
                                      ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR origin_addr, result_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: origin_addr, result_addr
             REAL :: origin_addr
             REAL :: result_addr
             INTEGER :: datatype
@@ -4604,7 +4604,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Free_mem
         SUBROUTINE PMPI_Free_mem(base, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR base
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: base
             REAL :: base
             INTEGER :: ierror
         END SUBROUTINE PMPI_Free_mem
@@ -4615,7 +4615,7 @@ MODULE pmpi_base
                             target_count, target_datatype, win, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR origin_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: origin_addr
             REAL :: origin_addr
             INTEGER :: origin_count
             INTEGER :: origin_datatype
@@ -4634,7 +4634,7 @@ MODULE pmpi_base
                                        target_count, target_datatype, op, win, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR origin_addr, result_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: origin_addr, result_addr
             REAL :: origin_addr
             INTEGER :: origin_count
             INTEGER :: origin_datatype
@@ -4656,7 +4656,7 @@ MODULE pmpi_base
                             target_count, target_datatype, win, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR origin_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: origin_addr
             REAL :: origin_addr
             INTEGER :: origin_count
             INTEGER :: origin_datatype
@@ -4674,7 +4674,7 @@ MODULE pmpi_base
                                     target_count, target_datatype, op, win, request, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR origin_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: origin_addr
             REAL :: origin_addr
             INTEGER :: origin_count
             INTEGER :: origin_datatype
@@ -4694,7 +4694,7 @@ MODULE pmpi_base
                              target_count, target_datatype, win, request, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR origin_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: origin_addr
             REAL :: origin_addr
             INTEGER :: origin_count
             INTEGER :: origin_datatype
@@ -4714,7 +4714,7 @@ MODULE pmpi_base
                                         target_count, target_datatype, op, win, request, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR origin_addr, result_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: origin_addr, result_addr
             REAL :: origin_addr
             INTEGER :: origin_count
             INTEGER :: origin_datatype
@@ -4737,7 +4737,7 @@ MODULE pmpi_base
                              target_count, target_datatype, win, request, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR origin_addr
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: origin_addr
             REAL :: origin_addr
             INTEGER :: origin_count
             INTEGER :: origin_datatype
@@ -4783,7 +4783,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Win_attach(win, base, size, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR base
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: base
             INTEGER :: win
             REAL :: base
             INTEGER(KIND=MPI_ADDRESS_KIND) :: size
@@ -4803,7 +4803,7 @@ MODULE pmpi_base
         SUBROUTINE PMPI_Win_create(base, size, disp_unit, info, comm, win, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR base
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: base
             REAL :: base
             INTEGER(KIND=MPI_ADDRESS_KIND) :: size
             INTEGER :: disp_unit
@@ -4827,7 +4827,7 @@ MODULE pmpi_base
     INTERFACE PMPI_Win_detach
         SUBROUTINE PMPI_Win_detach(win, base, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR base
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: base
             INTEGER :: win
             REAL :: base
             INTEGER :: ierror
@@ -5232,7 +5232,7 @@ MODULE pmpi_base
         SUBROUTINE PMPIX_Stream_send(buf, count, datatype, dest, tag, comm, source_stream_index, &
                                      dest_stream_index, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -5249,7 +5249,7 @@ MODULE pmpi_base
         SUBROUTINE PMPIX_Stream_isend(buf, count, datatype, dest, tag, comm, source_stream_index, &
                                       dest_stream_index, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -5268,7 +5268,7 @@ MODULE pmpi_base
                                      dest_stream_index, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -5286,7 +5286,7 @@ MODULE pmpi_base
         SUBROUTINE PMPIX_Stream_irecv(buf, count, datatype, source, tag, comm, source_stream_index, &
                                       dest_stream_index, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -5303,7 +5303,7 @@ MODULE pmpi_base
     INTERFACE PMPIX_Send_enqueue
         SUBROUTINE PMPIX_Send_enqueue(buf, count, datatype, dest, tag, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -5318,7 +5318,7 @@ MODULE pmpi_base
         SUBROUTINE PMPIX_Recv_enqueue(buf, count, datatype, source, tag, comm, status, ierror)
             USE MPI_CONSTANTS, ONLY: MPI_STATUS_SIZE
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -5333,7 +5333,7 @@ MODULE pmpi_base
     INTERFACE PMPIX_Isend_enqueue
         SUBROUTINE PMPIX_Isend_enqueue(buf, count, datatype, dest, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -5348,7 +5348,7 @@ MODULE pmpi_base
     INTERFACE PMPIX_Irecv_enqueue
         SUBROUTINE PMPIX_Irecv_enqueue(buf, count, datatype, source, tag, comm, request, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR buf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: buf
             REAL :: buf
             INTEGER :: count
             INTEGER :: datatype
@@ -5384,7 +5384,7 @@ MODULE pmpi_base
     INTERFACE PMPIX_Allreduce_enqueue
         SUBROUTINE PMPIX_Allreduce_enqueue(sendbuf, recvbuf, count, datatype, op, comm, ierror)
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR sendbuf, recvbuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: sendbuf, recvbuf
             REAL :: sendbuf
             REAL :: recvbuf
             INTEGER :: count
@@ -5859,7 +5859,7 @@ MODULE pmpi_base
                                            ierror)
             USE MPI_CONSTANTS, ONLY: MPI_OFFSET_KIND, MPI_ADDRESS_KIND
             IMPLICIT NONE
-            !DIR$ IGNORE_TKR userbuf, filebuf
+            !GCC$ ATTRIBUTES NO_ARG_CHECK :: userbuf, filebuf
             REAL :: userbuf
             INTEGER :: datatype
             INTEGER :: count
