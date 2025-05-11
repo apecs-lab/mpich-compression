@@ -9,7 +9,7 @@ set -e
 # Below line turn on echo mode
 # set -x
 
-prefix=/work/10127/jwang259/ls6/sw/mpich-install
+prefix=/grand/sbi-fair/Jiamin/sw/mpich-install
 exec_prefix=${prefix}
 bindir=${exec_prefix}/bin
 mpirun="${bindir}/mpiexec"
