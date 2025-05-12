@@ -19,8 +19,8 @@ make[2]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       src/atomic/mpl_atomic.lo
   CC       src/bt/mpl_bt.lo
   CC       src/dbg/mpl_dbg.lo
-  CC       src/env/mpl_env.lo
   CC       src/mem/mpl_trmem.lo
+  CC       src/env/mpl_env.lo
   CC       src/msg/mpl_msg.lo
   CC       src/sock/mpl_sock.lo
   CC       src/sock/mpl_sockaddr.lo
@@ -93,8 +93,8 @@ make[2]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       src/frontend/init/yaksa_init.lo
   CC       src/frontend/iov/yaksa_iov_len.lo
   CC       src/frontend/iov/yaksa_iov_len_max.lo
-  CC       src/frontend/pup/yaksa_ipack.lo
   CC       src/frontend/iov/yaksa_iov.lo
+  CC       src/frontend/pup/yaksa_ipack.lo
   CC       src/frontend/pup/yaksa_pack.lo
   CC       src/frontend/pup/yaksa_iunpack.lo
   CC       src/frontend/pup/yaksa_unpack.lo
@@ -135,11 +135,11 @@ make[2]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed__Bool.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector__Bool.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx__Bool.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig__Bool.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed__Bool.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig__Bool.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized__Bool.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector__Bool.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig__Bool.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector__Bool.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx__Bool.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed__Bool.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig__Bool.lo
@@ -169,8 +169,8 @@ make[2]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_char.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_char.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_char.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_char.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_char.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_char.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_char.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_char.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_char.lo
@@ -182,110 +182,110 @@ make[2]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_char.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_char.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_wchar_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_wchar_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_wchar_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_wchar_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_wchar_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_wchar_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_wchar_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_wchar_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_wchar_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_wchar_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_wchar_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_wchar_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_int8_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_wchar_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_int8_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_int8_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_int8_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_int8_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_int8_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_int8_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_int8_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_int8_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_int8_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_int8_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_int8_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_int8_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_int8_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_int8_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_int16_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_int16_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_int16_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_int16_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_int16_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_int16_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_int16_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_int16_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_int16_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_int16_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_int16_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_int16_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_int16_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_int16_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_int16_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_int32_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_int32_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_int32_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_int32_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_int32_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_int32_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_int32_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_int32_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_int32_t.lo
@@ -294,271 +294,271 @@ make[2]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_int32_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_int32_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_int32_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_int32_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_int32_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_int32_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_int32_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_int32_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_int32_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_int32_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_int64_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_int32_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_int64_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_int64_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_int64_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_int64_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_int64_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_int64_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_int64_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_int64_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_int64_t.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_int64_t.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_int64_t.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_float.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_float.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_float.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_float.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_float.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_float.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_float.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_float.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_float.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_float.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_float.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_long_double.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_long_double.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_long_double.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_c_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_c_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_c_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_c_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_c_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_c_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_c_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_c_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_c_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_c_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_c_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_c_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_c_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_c_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_c_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_c_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_c_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_c_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hvector_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_blkhindx_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_hindexed_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_contig_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hvector_resized_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hvector_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_blkhindx_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_hindexed_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_contig_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_blkhindx_resized_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hvector_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_blkhindx_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_hindexed_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_blkhindx_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_contig_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hvector_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_hindexed_resized_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_hindexed_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_contig_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_contig_resized_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hvector_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_blkhindx_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_hindexed_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_c_long_double_complex.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_contig_c_long_double_complex.lo
   CC       src/backend/seq/pup/yaksuri_seqi_pup_resized_resized_c_long_double_complex.lo
-  CC       src/backend/seq/pup/yaksuri_seq_pup.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hvector_contig.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hvector_hvector.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hvector_blkhindx.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hvector_hindexed.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hvector_contig.lo
+  CC       src/backend/seq/pup/yaksuri_seq_pup.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hvector_resized.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_blkhindx_hvector.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hvector_builtin.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hvector_hindexed.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_blkhindx_blkhindx.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_blkhindx_hvector.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_blkhindx_hindexed.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_blkhindx_resized.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_blkhindx_contig.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hindexed_hvector.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_blkhindx_resized.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_blkhindx_builtin.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hindexed_blkhindx.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hindexed_hindexed.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hindexed_contig.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hindexed_resized.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hindexed_builtin.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_hindexed_hvector.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_contig_blkhindx.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_contig_hvector.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_contig_hindexed.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_contig_blkhindx.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_contig_contig.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_contig_resized.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_resized_hvector.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_contig_builtin.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_resized_blkhindx.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_resized_hvector.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_resized_hindexed.lo
-  CC       src/backend/src/yaksur_hooks.lo
-  CC       src/backend/src/yaksur_request.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_builtin.lo
-  CC       src/backend/src/yaksuri_progress.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_resized_contig.lo
-  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_resized_resized.lo
   CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_resized_builtin.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_resized_resized.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_resized_blkhindx.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns_builtin.lo
+  CC       src/backend/seq/pup/yaksuri_seqi_populate_pupfns.lo
+  CC       src/backend/src/yaksuri_progress.lo
+  CC       src/backend/src/yaksur_hooks.lo
   CC       src/backend/src/yaksur_pup.lo
+  CC       src/backend/src/yaksur_request.lo
   CCLD     libyaksa.la
 make[2]: Leaving directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compression/src/mpi/datatype/typerep/yaksa'
 Making all in src/pmi
@@ -584,8 +584,8 @@ make[3]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       mpi-io/io_impl.lo
   CC       mpi-io/mpich_fileutil.lo
   CC       mpi-io/mpir-mpioinit.lo
-  CC       mpi-io/mpiu_greq.lo
   CC       mpi-io/mpiu_external32.lo
+  CC       mpi-io/mpiu_greq.lo
   CC       mpi-io/mpir_cst_filesys.lo
   CC       adio/ad_nfs/ad_nfs_read.lo
   CC       adio/ad_nfs/ad_nfs_open.lo
@@ -596,8 +596,8 @@ make[3]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       adio/ad_nfs/ad_nfs_iwrite.lo
   CC       adio/ad_nfs/ad_nfs_wait.lo
   CC       adio/ad_nfs/ad_nfs_setsh.lo
-  CC       adio/ad_nfs/ad_nfs.lo
   CC       adio/ad_nfs/ad_nfs_getsh.lo
+  CC       adio/ad_nfs/ad_nfs.lo
   CC       adio/ad_nfs/ad_nfs_resize.lo
   CC       adio/ad_nfs/ad_nfs_features.lo
   CC       adio/ad_nfs/ad_nfs_hints.lo
@@ -637,15 +637,15 @@ make[3]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       adio/common/ad_get_sh_fp.lo
   CC       adio/common/ad_hints.lo
   CC       adio/common/ad_init.lo
-  CC       adio/common/ad_iopen.lo
   CC       adio/common/ad_io_coll.lo
+  CC       adio/common/ad_iopen.lo
   CC       adio/common/ad_iread.lo
   CC       adio/common/ad_iread_coll.lo
   CC       adio/common/ad_iread_fake.lo
   CC       adio/common/ad_iwrite.lo
   CC       adio/common/ad_iwrite_coll.lo
-  CC       adio/common/ad_open.lo
   CC       adio/common/ad_iwrite_fake.lo
+  CC       adio/common/ad_open.lo
   CC       adio/common/ad_opencoll.lo
   CC       adio/common/ad_opencoll_failsafe.lo
   CC       adio/common/ad_opencoll_scalable.lo
@@ -674,8 +674,8 @@ make[3]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       adio/common/flatten.lo
   CC       adio/common/get_fp_posn.lo
   CC       adio/common/greq_fns.lo
-  CC       adio/common/iscontig.lo
   CC       adio/common/heap_sort.lo
+  CC       adio/common/iscontig.lo
   CC       adio/common/lock.lo
   CC       adio/common/malloc.lo
   CC       adio/common/shfp_fname.lo
@@ -758,14 +758,14 @@ make[4]: Entering directory '/lus/grand/projects/sbi-fair/Jiamin/sw/mpich-compre
   CC       lib/tools/bootstrap/external/rsh_env.lo
   CC       lib/tools/bootstrap/external/ssh_init.lo
   CC       lib/tools/bootstrap/external/ssh.lo
-  CC       lib/tools/bootstrap/external/ssh_finalize.lo
   CC       lib/tools/bootstrap/external/ssh_env.lo
+  CC       lib/tools/bootstrap/external/ssh_finalize.lo
   CC       lib/tools/bootstrap/external/slurm_init.lo
   CC       lib/tools/bootstrap/external/slurm_launch.lo
   CC       lib/tools/bootstrap/external/slurm_env.lo
   CC       lib/tools/bootstrap/external/slurm_query_native_int.lo
-  CC       lib/tools/bootstrap/external/slurm_query_proxy_id.lo
   CC       lib/tools/bootstrap/external/slurm_query_node_list.lo
+  CC       lib/tools/bootstrap/external/slurm_query_proxy_id.lo
   CC       lib/tools/bootstrap/external/ll_init.lo
   CC       lib/tools/bootstrap/external/ll_launch.lo
   CC       lib/tools/bootstrap/external/ll_query_native_int.lo
@@ -891,13 +891,13 @@ sed -e 's/^C/\!/g' -e '/EXTERNAL/d' \
   FC       src/binding/fortran/use_mpi_f08/wrappers_f/f08ts.lo
   FC       src/binding/fortran/use_mpi_f08/wrappers_f/pf08ts.lo
   CC       src/binding/fortran/use_mpi_f08/wrappers_c/lib_libf08_mpi_la-f08_cdesc.lo
+cp -p src/env/mpicc.bash src/env/mpicc
+cp -p src/env/mpifort.bash src/env/mpifort
   CC       src/binding/fortran/use_mpi_f08/wrappers_c/lib_libf08_mpi_la-cdesc.lo
   CC       src/binding/fortran/use_mpi_f08/wrappers_c/lib_libf08_mpi_la-comm_spawn_c.lo
-cp -p src/env/mpicc.bash src/env/mpicc
+cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/fortran/use_mpi_f08/wrappers_c/lib_libf08_mpi_la-comm_spawn_multiple_c.lo
   CC       src/binding/fortran/use_mpi_f08/wrappers_c/lib_libf08_mpi_la-utils.lo
-cp -p src/env/mpifort.bash src/env/mpifort
-cp -p src/env/mpicxx.bash src/env/mpicxx
   CXX      src/binding/cxx/initcxx.lo
   CC       src/binding/c/abi/lib_libmpi_la-abi_get_info.lo
   CC       src/binding/c/abi/lib_libmpi_la-abi_get_version.lo
@@ -937,61 +937,61 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/attr/lib_libmpi_la-win_create_keyval.lo
   CC       src/binding/c/attr/lib_libmpi_la-win_delete_attr.lo
   CC       src/binding/c/attr/lib_libmpi_la-win_free_keyval.lo
-  CC       src/binding/c/attr/lib_libmpi_la-win_set_attr.lo
   CC       src/binding/c/attr/lib_libmpi_la-win_get_attr.lo
+  CC       src/binding/c/attr/lib_libmpi_la-win_set_attr.lo
   CC       src/binding/c/binding/lib_libmpi_la-op_create_x.lo
   CC       src/binding/c/binding/lib_libmpi_la-comm_create_errhandler_x.lo
   CC       src/binding/c/binding/lib_libmpi_la-win_create_errhandler_x.lo
-  CC       src/binding/c/binding/lib_libmpi_la-session_create_errhandler_x.lo
   CC       src/binding/c/binding/lib_libmpi_la-file_create_errhandler_x.lo
+  CC       src/binding/c/binding/lib_libmpi_la-session_create_errhandler_x.lo
   CC       src/binding/c/coll/lib_libmpi_la-allgather.lo
   CC       src/binding/c/coll/lib_libmpi_la-allgather_init.lo
-  CC       src/binding/c/coll/lib_libmpi_la-allreduce.lo
-  CC       src/binding/c/coll/lib_libmpi_la-allgatherv_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-allgatherv.lo
+  CC       src/binding/c/coll/lib_libmpi_la-allgatherv_init.lo
+  CC       src/binding/c/coll/lib_libmpi_la-allreduce.lo
   CC       src/binding/c/coll/lib_libmpi_la-allreduce_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-alltoall.lo
   CC       src/binding/c/coll/lib_libmpi_la-alltoall_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-alltoallv.lo
   CC       src/binding/c/coll/lib_libmpi_la-alltoallv_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-alltoallw.lo
-  CC       src/binding/c/coll/lib_libmpi_la-barrier.lo
-  CC       src/binding/c/coll/lib_libmpi_la-bcast.lo
-  CC       src/binding/c/coll/lib_libmpi_la-gather.lo
-  CC       src/binding/c/coll/lib_libmpi_la-barrier_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-alltoallw_init.lo
-  CC       src/binding/c/coll/lib_libmpi_la-gatherv_init.lo
-  CC       src/binding/c/coll/lib_libmpi_la-gatherv.lo
-  CC       src/binding/c/coll/lib_libmpi_la-exscan_init.lo
+  CC       src/binding/c/coll/lib_libmpi_la-barrier.lo
+  CC       src/binding/c/coll/lib_libmpi_la-barrier_init.lo
+  CC       src/binding/c/coll/lib_libmpi_la-bcast.lo
   CC       src/binding/c/coll/lib_libmpi_la-bcast_init.lo
-  CC       src/binding/c/coll/lib_libmpi_la-gather_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-exscan.lo
+  CC       src/binding/c/coll/lib_libmpi_la-exscan_init.lo
+  CC       src/binding/c/coll/lib_libmpi_la-gather.lo
+  CC       src/binding/c/coll/lib_libmpi_la-gather_init.lo
+  CC       src/binding/c/coll/lib_libmpi_la-gatherv.lo
+  CC       src/binding/c/coll/lib_libmpi_la-gatherv_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-iallgather.lo
   CC       src/binding/c/coll/lib_libmpi_la-iallgatherv.lo
   CC       src/binding/c/coll/lib_libmpi_la-iallreduce.lo
   CC       src/binding/c/coll/lib_libmpi_la-ialltoall.lo
+  CC       src/binding/c/coll/lib_libmpi_la-ialltoallv.lo
   CC       src/binding/c/coll/lib_libmpi_la-ialltoallw.lo
   CC       src/binding/c/coll/lib_libmpi_la-ibarrier.lo
-  CC       src/binding/c/coll/lib_libmpi_la-ialltoallv.lo
   CC       src/binding/c/coll/lib_libmpi_la-ibcast.lo
-  CC       src/binding/c/coll/lib_libmpi_la-igather.lo
   CC       src/binding/c/coll/lib_libmpi_la-iexscan.lo
+  CC       src/binding/c/coll/lib_libmpi_la-igather.lo
   CC       src/binding/c/coll/lib_libmpi_la-igatherv.lo
-  CC       src/binding/c/coll/lib_libmpi_la-ineighbor_allgatherv.lo
   CC       src/binding/c/coll/lib_libmpi_la-ineighbor_allgather.lo
+  CC       src/binding/c/coll/lib_libmpi_la-ineighbor_allgatherv.lo
   CC       src/binding/c/coll/lib_libmpi_la-ineighbor_alltoall.lo
   CC       src/binding/c/coll/lib_libmpi_la-ineighbor_alltoallv.lo
   CC       src/binding/c/coll/lib_libmpi_la-ineighbor_alltoallw.lo
   CC       src/binding/c/coll/lib_libmpi_la-ireduce.lo
   CC       src/binding/c/coll/lib_libmpi_la-ireduce_scatter.lo
-  CC       src/binding/c/coll/lib_libmpi_la-iscan.lo
   CC       src/binding/c/coll/lib_libmpi_la-ireduce_scatter_block.lo
+  CC       src/binding/c/coll/lib_libmpi_la-iscan.lo
   CC       src/binding/c/coll/lib_libmpi_la-iscatter.lo
   CC       src/binding/c/coll/lib_libmpi_la-iscatterv.lo
   CC       src/binding/c/coll/lib_libmpi_la-neighbor_allgather.lo
   CC       src/binding/c/coll/lib_libmpi_la-neighbor_allgather_init.lo
-  CC       src/binding/c/coll/lib_libmpi_la-neighbor_allgatherv_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-neighbor_allgatherv.lo
+  CC       src/binding/c/coll/lib_libmpi_la-neighbor_allgatherv_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-neighbor_alltoall.lo
   CC       src/binding/c/coll/lib_libmpi_la-neighbor_alltoall_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-neighbor_alltoallv.lo
@@ -1002,8 +1002,8 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/coll/lib_libmpi_la-reduce_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-reduce_local.lo
   CC       src/binding/c/coll/lib_libmpi_la-reduce_scatter.lo
-  CC       src/binding/c/coll/lib_libmpi_la-reduce_scatter_block_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-reduce_scatter_block.lo
+  CC       src/binding/c/coll/lib_libmpi_la-reduce_scatter_block_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-reduce_scatter_init.lo
   CC       src/binding/c/coll/lib_libmpi_la-scan.lo
   CC       src/binding/c/coll/lib_libmpi_la-scan_init.lo
@@ -1022,21 +1022,21 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/comm/lib_libmpi_la-comm_group.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_idup.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_idup_with_info.lo
-  CC       src/binding/c/comm/lib_libmpi_la-comm_remote_group.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_rank.lo
+  CC       src/binding/c/comm/lib_libmpi_la-comm_remote_group.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_remote_size.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_set_info.lo
-  CC       src/binding/c/comm/lib_libmpi_la-comm_size.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_set_name.lo
+  CC       src/binding/c/comm/lib_libmpi_la-comm_size.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_split.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_split_type.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_test_inter.lo
   CC       src/binding/c/comm/lib_libmpi_la-intercomm_create.lo
   CC       src/binding/c/comm/lib_libmpi_la-intercomm_create_from_groups.lo
-  CC       src/binding/c/comm/lib_libmpi_la-comm_test_threadcomm.lo
   CC       src/binding/c/comm/lib_libmpi_la-intercomm_merge.lo
-  CC       src/binding/c/comm/lib_libmpi_la-comm_shrink.lo
+  CC       src/binding/c/comm/lib_libmpi_la-comm_test_threadcomm.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_revoke.lo
+  CC       src/binding/c/comm/lib_libmpi_la-comm_shrink.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_failure_ack.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_failure_get_acked.lo
   CC       src/binding/c/comm/lib_libmpi_la-comm_agree.lo
@@ -1062,10 +1062,10 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/datatype/lib_libmpi_la-type_create_hvector.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_create_indexed_block.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_create_resized.lo
-  CC       src/binding/c/datatype/lib_libmpi_la-type_create_struct.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_create_subarray.lo
-  CC       src/binding/c/datatype/lib_libmpi_la-type_free.lo
+  CC       src/binding/c/datatype/lib_libmpi_la-type_create_struct.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_dup.lo
+  CC       src/binding/c/datatype/lib_libmpi_la-type_free.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_get_contents.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_get_envelope.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_get_extent.lo
@@ -1081,25 +1081,25 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/datatype/lib_libmpi_la-type_size_x.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_vector.lo
   CC       src/binding/c/datatype/lib_libmpi_la-unpack.lo
-  CC       src/binding/c/datatype/lib_libmpi_la-type_extent.lo
   CC       src/binding/c/datatype/lib_libmpi_la-unpack_external.lo
+  CC       src/binding/c/datatype/lib_libmpi_la-type_extent.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_lb.lo
-  CC       src/binding/c/datatype/lib_libmpi_la-type_ub.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_iov_len.lo
+  CC       src/binding/c/datatype/lib_libmpi_la-type_ub.lo
   CC       src/binding/c/datatype/lib_libmpi_la-type_iov.lo
-  CC       src/binding/c/errhan/lib_libmpi_la-add_error_code.lo
   CC       src/binding/c/errhan/lib_libmpi_la-add_error_class.lo
+  CC       src/binding/c/errhan/lib_libmpi_la-add_error_code.lo
   CC       src/binding/c/errhan/lib_libmpi_la-add_error_string.lo
   CC       src/binding/c/errhan/lib_libmpi_la-comm_call_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-comm_create_errhandler.lo
-  CC       src/binding/c/errhan/lib_libmpi_la-comm_get_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-comm_set_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-errhandler_free.lo
+  CC       src/binding/c/errhan/lib_libmpi_la-comm_get_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-error_class.lo
-  CC       src/binding/c/errhan/lib_libmpi_la-error_string.lo
   CC       src/binding/c/errhan/lib_libmpi_la-file_call_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-file_create_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-file_get_errhandler.lo
+  CC       src/binding/c/errhan/lib_libmpi_la-error_string.lo
   CC       src/binding/c/errhan/lib_libmpi_la-file_set_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-remove_error_class.lo
   CC       src/binding/c/errhan/lib_libmpi_la-remove_error_code.lo
@@ -1107,39 +1107,39 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/errhan/lib_libmpi_la-session_call_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-session_create_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-session_get_errhandler.lo
-  CC       src/binding/c/errhan/lib_libmpi_la-win_call_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-session_set_errhandler.lo
-  CC       src/binding/c/errhan/lib_libmpi_la-win_create_errhandler.lo
+  CC       src/binding/c/errhan/lib_libmpi_la-win_call_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-win_get_errhandler.lo
+  CC       src/binding/c/errhan/lib_libmpi_la-win_create_errhandler.lo
   CC       src/binding/c/errhan/lib_libmpi_la-win_set_errhandler.lo
-  CC       src/binding/c/f2c/lib_libmpi_la-comm_c2f.lo
   CC       src/binding/c/f2c/lib_libmpi_la-comm_f2c.lo
-  CC       src/binding/c/f2c/lib_libmpi_la-errhandler_c2f.lo
+  CC       src/binding/c/f2c/lib_libmpi_la-comm_c2f.lo
   CC       src/binding/c/f2c/lib_libmpi_la-errhandler_f2c.lo
+  CC       src/binding/c/f2c/lib_libmpi_la-errhandler_c2f.lo
+  CC       src/binding/c/f2c/lib_libmpi_la-group_c2f.lo
   CC       src/binding/c/f2c/lib_libmpi_la-group_f2c.lo
   CC       src/binding/c/f2c/lib_libmpi_la-info_c2f.lo
-  CC       src/binding/c/f2c/lib_libmpi_la-group_c2f.lo
   CC       src/binding/c/f2c/lib_libmpi_la-info_f2c.lo
   CC       src/binding/c/f2c/lib_libmpi_la-message_c2f.lo
   CC       src/binding/c/f2c/lib_libmpi_la-message_f2c.lo
-  CC       src/binding/c/f2c/lib_libmpi_la-op_f2c.lo
-  CC       src/binding/c/f2c/lib_libmpi_la-request_c2f.lo
   CC       src/binding/c/f2c/lib_libmpi_la-op_c2f.lo
+  CC       src/binding/c/f2c/lib_libmpi_la-request_c2f.lo
+  CC       src/binding/c/f2c/lib_libmpi_la-op_f2c.lo
   CC       src/binding/c/f2c/lib_libmpi_la-request_f2c.lo
   CC       src/binding/c/f2c/lib_libmpi_la-session_c2f.lo
-  CC       src/binding/c/f2c/lib_libmpi_la-session_f2c.lo
   CC       src/binding/c/f2c/lib_libmpi_la-status_c2f.lo
+  CC       src/binding/c/f2c/lib_libmpi_la-session_f2c.lo
   CC       src/binding/c/f2c/lib_libmpi_la-status_c2f08.lo
   CC       src/binding/c/f2c/lib_libmpi_la-status_f082c.lo
+  CC       src/binding/c/f2c/lib_libmpi_la-status_f2c.lo
   CC       src/binding/c/f2c/lib_libmpi_la-status_f082f.lo
   CC       src/binding/c/f2c/lib_libmpi_la-status_f2f08.lo
-  CC       src/binding/c/f2c/lib_libmpi_la-status_f2c.lo
   CC       src/binding/c/f2c/lib_libmpi_la-type_c2f.lo
   CC       src/binding/c/f2c/lib_libmpi_la-type_f2c.lo
   CC       src/binding/c/f2c/lib_libmpi_la-win_c2f.lo
-  CC       src/binding/c/f2c/lib_libmpi_la-win_f2c.lo
   CC       src/binding/c/group/lib_libmpi_la-group_compare.lo
   CC       src/binding/c/group/lib_libmpi_la-group_difference.lo
+  CC       src/binding/c/f2c/lib_libmpi_la-win_f2c.lo
   CC       src/binding/c/group/lib_libmpi_la-group_excl.lo
   CC       src/binding/c/group/lib_libmpi_la-group_free.lo
   CC       src/binding/c/group/lib_libmpi_la-group_incl.lo
@@ -1147,52 +1147,52 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/group/lib_libmpi_la-group_range_excl.lo
   CC       src/binding/c/group/lib_libmpi_la-group_range_incl.lo
   CC       src/binding/c/group/lib_libmpi_la-group_rank.lo
-  CC       src/binding/c/group/lib_libmpi_la-group_size.lo
   CC       src/binding/c/group/lib_libmpi_la-group_translate_ranks.lo
+  CC       src/binding/c/group/lib_libmpi_la-group_size.lo
   CC       src/binding/c/group/lib_libmpi_la-group_union.lo
   CC       src/binding/c/info/lib_libmpi_la-info_create.lo
   CC       src/binding/c/info/lib_libmpi_la-info_create_env.lo
   CC       src/binding/c/info/lib_libmpi_la-info_delete.lo
   CC       src/binding/c/info/lib_libmpi_la-info_dup.lo
+  CC       src/binding/c/info/lib_libmpi_la-info_free.lo
   CC       src/binding/c/info/lib_libmpi_la-info_get.lo
   CC       src/binding/c/info/lib_libmpi_la-info_get_nkeys.lo
-  CC       src/binding/c/info/lib_libmpi_la-info_free.lo
-  CC       src/binding/c/info/lib_libmpi_la-info_get_string.lo
   CC       src/binding/c/info/lib_libmpi_la-info_get_nthkey.lo
+  CC       src/binding/c/info/lib_libmpi_la-info_get_string.lo
   CC       src/binding/c/info/lib_libmpi_la-info_get_valuelen.lo
-  CC       src/binding/c/info/lib_libmpi_la-info_set_hex.lo
   CC       src/binding/c/info/lib_libmpi_la-info_set.lo
+  CC       src/binding/c/info/lib_libmpi_la-info_set_hex.lo
   CC       src/binding/c/init/lib_libmpi_la-abort.lo
-  CC       src/binding/c/init/lib_libmpi_la-comm_create_from_group.lo
   CC       src/binding/c/init/lib_libmpi_la-finalize.lo
+  CC       src/binding/c/init/lib_libmpi_la-comm_create_from_group.lo
   CC       src/binding/c/init/lib_libmpi_la-finalized.lo
   CC       src/binding/c/init/lib_libmpi_la-group_from_session_pset.lo
-  CC       src/binding/c/init/lib_libmpi_la-init_thread.lo
   CC       src/binding/c/init/lib_libmpi_la-init.lo
+  CC       src/binding/c/init/lib_libmpi_la-init_thread.lo
   CC       src/binding/c/init/lib_libmpi_la-initialized.lo
   CC       src/binding/c/init/lib_libmpi_la-is_thread_main.lo
-  CC       src/binding/c/init/lib_libmpi_la-query_thread.lo
   CC       src/binding/c/init/lib_libmpi_la-session_finalize.lo
+  CC       src/binding/c/init/lib_libmpi_la-query_thread.lo
   CC       src/binding/c/init/lib_libmpi_la-session_get_info.lo
   CC       src/binding/c/init/lib_libmpi_la-session_get_nth_pset.lo
-  CC       src/binding/c/init/lib_libmpi_la-session_get_num_psets.lo
   CC       src/binding/c/init/lib_libmpi_la-session_get_pset_info.lo
+  CC       src/binding/c/init/lib_libmpi_la-session_get_num_psets.lo
   CC       src/binding/c/init/lib_libmpi_la-session_init.lo
   CC       src/binding/c/misc/lib_libmpi_la-aint_add.lo
   CC       src/binding/c/misc/lib_libmpi_la-aint_diff.lo
-  CC       src/binding/c/misc/lib_libmpi_la-get_library_version.lo
   CC       src/binding/c/misc/lib_libmpi_la-get_processor_name.lo
+  CC       src/binding/c/misc/lib_libmpi_la-get_library_version.lo
   CC       src/binding/c/misc/lib_libmpi_la-get_version.lo
-  CC       src/binding/c/misc/lib_libmpi_la-query_cuda_support.lo
   CC       src/binding/c/misc/lib_libmpi_la-pcontrol.lo
   CC       src/binding/c/misc/lib_libmpi_la-gpu_query_support.lo
   CC       src/binding/c/misc/lib_libmpi_la-query_ze_support.lo
+  CC       src/binding/c/misc/lib_libmpi_la-query_cuda_support.lo
   CC       src/binding/c/misc/lib_libmpi_la-query_hip_support.lo
-  CC       src/binding/c/mpit/lib_libmpi_la-category_changed.lo
   CC       src/binding/c/mpit/lib_libmpi_la-category_get_categories.lo
   CC       src/binding/c/mpit/lib_libmpi_la-category_get_cvars.lo
   CC       src/binding/c/mpit/lib_libmpi_la-category_get_events.lo
   CC       src/binding/c/mpit/lib_libmpi_la-category_get_index.lo
+  CC       src/binding/c/mpit/lib_libmpi_la-category_changed.lo
   CC       src/binding/c/mpit/lib_libmpi_la-category_get_info.lo
   CC       src/binding/c/mpit/lib_libmpi_la-category_get_num.lo
   CC       src/binding/c/mpit/lib_libmpi_la-category_get_num_events.lo
@@ -1203,8 +1203,8 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/mpit/lib_libmpi_la-cvar_handle_alloc.lo
   CC       src/binding/c/mpit/lib_libmpi_la-cvar_handle_free.lo
   CC       src/binding/c/mpit/lib_libmpi_la-cvar_read.lo
-  CC       src/binding/c/mpit/lib_libmpi_la-cvar_write.lo
   CC       src/binding/c/mpit/lib_libmpi_la-enum_get_info.lo
+  CC       src/binding/c/mpit/lib_libmpi_la-cvar_write.lo
   CC       src/binding/c/mpit/lib_libmpi_la-enum_get_item.lo
   CC       src/binding/c/mpit/lib_libmpi_la-event_callback_get_info.lo
   CC       src/binding/c/mpit/lib_libmpi_la-event_callback_set_info.lo
@@ -1217,11 +1217,11 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/mpit/lib_libmpi_la-event_handle_alloc.lo
   CC       src/binding/c/mpit/lib_libmpi_la-event_handle_free.lo
   CC       src/binding/c/mpit/lib_libmpi_la-event_handle_get_info.lo
-  CC       src/binding/c/mpit/lib_libmpi_la-event_handle_set_info.lo
   CC       src/binding/c/mpit/lib_libmpi_la-event_read.lo
-  CC       src/binding/c/mpit/lib_libmpi_la-finalize.lo
+  CC       src/binding/c/mpit/lib_libmpi_la-event_handle_set_info.lo
   CC       src/binding/c/mpit/lib_libmpi_la-event_register_callback.lo
   CC       src/binding/c/mpit/lib_libmpi_la-event_set_dropped_handler.lo
+  CC       src/binding/c/mpit/lib_libmpi_la-finalize.lo
   CC       src/binding/c/mpit/lib_libmpi_la-init_thread.lo
   CC       src/binding/c/mpit/lib_libmpi_la-pvar_get_index.lo
   CC       src/binding/c/mpit/lib_libmpi_la-pvar_get_info.lo
@@ -1231,78 +1231,78 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/mpit/lib_libmpi_la-pvar_read.lo
   CC       src/binding/c/mpit/lib_libmpi_la-pvar_readreset.lo
   CC       src/binding/c/mpit/lib_libmpi_la-pvar_reset.lo
+  CC       src/binding/c/mpit/lib_libmpi_la-pvar_session_free.lo
   CC       src/binding/c/mpit/lib_libmpi_la-pvar_session_create.lo
   CC       src/binding/c/mpit/lib_libmpi_la-pvar_start.lo
-  CC       src/binding/c/mpit/lib_libmpi_la-pvar_session_free.lo
   CC       src/binding/c/mpit/lib_libmpi_la-pvar_stop.lo
   CC       src/binding/c/mpit/lib_libmpi_la-pvar_write.lo
   CC       src/binding/c/mpit/lib_libmpi_la-source_get_info.lo
-  CC       src/binding/c/mpit/lib_libmpi_la-source_get_timestamp.lo
   CC       src/binding/c/mpit/lib_libmpi_la-source_get_num.lo
-  CC       src/binding/c/op/lib_libmpi_la-op_commutative.lo
+  CC       src/binding/c/mpit/lib_libmpi_la-source_get_timestamp.lo
   CC       src/binding/c/op/lib_libmpi_la-op_create.lo
+  CC       src/binding/c/op/lib_libmpi_la-op_commutative.lo
   CC       src/binding/c/op/lib_libmpi_la-op_free.lo
   CC       src/binding/c/part/lib_libmpi_la-parrived.lo
   CC       src/binding/c/part/lib_libmpi_la-pready.lo
   CC       src/binding/c/part/lib_libmpi_la-pready_list.lo
   CC       src/binding/c/part/lib_libmpi_la-pready_range.lo
   CC       src/binding/c/part/lib_libmpi_la-precv_init.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-bsend.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-bsend_init.lo
   CC       src/binding/c/part/lib_libmpi_la-psend_init.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-bsend_init.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-bsend.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-buffer_attach.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-buffer_detach.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-buffer_flush.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-buffer_iflush.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-comm_attach_buffer.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-buffer_iflush.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-buffer_flush.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-comm_detach_buffer.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-comm_flush_buffer.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-comm_iflush_buffer.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-ibsend.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-improbe.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-imrecv.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-iprobe.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-irecv.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-irsend.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-iprobe.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-isend.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-irecv.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-isendrecv.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-isendrecv_replace.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-issend.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-mprobe.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-mrecv.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-probe.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-recv.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-recv_init.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-rsend_init.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-rsend.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-recv.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-rsend_init.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-recv_init.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-send.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-send_init.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-sendrecv.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-send_init.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-sendrecv_replace.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-session_attach_buffer.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-session_detach_buffer.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-session_flush_buffer.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-session_iflush_buffer.lo
-  CC       src/binding/c/pt2pt/lib_libmpi_la-ssend.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-session_attach_buffer.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-session_flush_buffer.lo
   CC       src/binding/c/pt2pt/lib_libmpi_la-ssend_init.lo
+  CC       src/binding/c/pt2pt/lib_libmpi_la-ssend.lo
   CC       src/binding/c/request/lib_libmpi_la-cancel.lo
-  CC       src/binding/c/request/lib_libmpi_la-grequest_complete.lo
   CC       src/binding/c/request/lib_libmpi_la-grequest_start.lo
+  CC       src/binding/c/request/lib_libmpi_la-grequest_complete.lo
   CC       src/binding/c/request/lib_libmpi_la-request_free.lo
   CC       src/binding/c/request/lib_libmpi_la-request_get_status.lo
-  CC       src/binding/c/request/lib_libmpi_la-request_get_status_any.lo
   CC       src/binding/c/request/lib_libmpi_la-request_get_status_all.lo
+  CC       src/binding/c/request/lib_libmpi_la-request_get_status_any.lo
   CC       src/binding/c/request/lib_libmpi_la-request_get_status_some.lo
   CC       src/binding/c/request/lib_libmpi_la-start.lo
   CC       src/binding/c/request/lib_libmpi_la-startall.lo
-  CC       src/binding/c/request/lib_libmpi_la-status_get_error.lo
   CC       src/binding/c/request/lib_libmpi_la-status_get_source.lo
+  CC       src/binding/c/request/lib_libmpi_la-status_set_error.lo
+  CC       src/binding/c/request/lib_libmpi_la-status_get_error.lo
   CC       src/binding/c/request/lib_libmpi_la-status_get_tag.lo
   CC       src/binding/c/request/lib_libmpi_la-status_set_source.lo
-  CC       src/binding/c/request/lib_libmpi_la-status_set_error.lo
   CC       src/binding/c/request/lib_libmpi_la-status_set_tag.lo
-  CC       src/binding/c/request/lib_libmpi_la-status_set_cancelled.lo
   CC       src/binding/c/request/lib_libmpi_la-test.lo
+  CC       src/binding/c/request/lib_libmpi_la-status_set_cancelled.lo
   CC       src/binding/c/request/lib_libmpi_la-test_cancelled.lo
   CC       src/binding/c/request/lib_libmpi_la-testall.lo
   CC       src/binding/c/request/lib_libmpi_la-testany.lo
@@ -1314,19 +1314,19 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/request/lib_libmpi_la-waitsome.lo
   CC       src/binding/c/request/lib_libmpi_la-grequest_class_create.lo
   CC       src/binding/c/request/lib_libmpi_la-grequest_class_allocate.lo
+  CC       src/binding/c/rma/lib_libmpi_la-compare_and_swap.lo
   CC       src/binding/c/request/lib_libmpi_la-request_is_complete.lo
   CC       src/binding/c/rma/lib_libmpi_la-accumulate.lo
   CC       src/binding/c/rma/lib_libmpi_la-alloc_mem.lo
-  CC       src/binding/c/rma/lib_libmpi_la-compare_and_swap.lo
-  CC       src/binding/c/rma/lib_libmpi_la-fetch_and_op.lo
-  CC       src/binding/c/rma/lib_libmpi_la-free_mem.lo
   CC       src/binding/c/rma/lib_libmpi_la-get.lo
+  CC       src/binding/c/rma/lib_libmpi_la-fetch_and_op.lo
   CC       src/binding/c/rma/lib_libmpi_la-get_accumulate.lo
+  CC       src/binding/c/rma/lib_libmpi_la-free_mem.lo
   CC       src/binding/c/rma/lib_libmpi_la-put.lo
   CC       src/binding/c/rma/lib_libmpi_la-rget.lo
-  CC       src/binding/c/rma/lib_libmpi_la-rput.lo
-  CC       src/binding/c/rma/lib_libmpi_la-rget_accumulate.lo
   CC       src/binding/c/rma/lib_libmpi_la-raccumulate.lo
+  CC       src/binding/c/rma/lib_libmpi_la-rget_accumulate.lo
+  CC       src/binding/c/rma/lib_libmpi_la-rput.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_allocate.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_allocate_shared.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_attach.lo
@@ -1339,31 +1339,31 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/rma/lib_libmpi_la-win_flush_all.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_flush_local.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_flush_local_all.lo
-  CC       src/binding/c/rma/lib_libmpi_la-win_free.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_get_group.lo
-  CC       src/binding/c/rma/lib_libmpi_la-win_get_name.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_get_info.lo
+  CC       src/binding/c/rma/lib_libmpi_la-win_get_name.lo
+  CC       src/binding/c/rma/lib_libmpi_la-win_free.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_lock.lo
-  CC       src/binding/c/rma/lib_libmpi_la-win_lock_all.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_post.lo
+  CC       src/binding/c/rma/lib_libmpi_la-win_lock_all.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_set_info.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_set_name.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_shared_query.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_start.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_sync.lo
-  CC       src/binding/c/rma/lib_libmpi_la-win_test.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_unlock.lo
+  CC       src/binding/c/rma/lib_libmpi_la-win_test.lo
   CC       src/binding/c/rma/lib_libmpi_la-win_wait.lo
-  CC       src/binding/c/rma/lib_libmpi_la-win_unlock_all.lo
   CC       src/binding/c/spawn/lib_libmpi_la-close_port.lo
+  CC       src/binding/c/rma/lib_libmpi_la-win_unlock_all.lo
   CC       src/binding/c/spawn/lib_libmpi_la-comm_accept.lo
   CC       src/binding/c/spawn/lib_libmpi_la-comm_connect.lo
   CC       src/binding/c/spawn/lib_libmpi_la-comm_disconnect.lo
   CC       src/binding/c/spawn/lib_libmpi_la-comm_get_parent.lo
-  CC       src/binding/c/spawn/lib_libmpi_la-comm_join.lo
-  CC       src/binding/c/spawn/lib_libmpi_la-comm_spawn.lo
   CC       src/binding/c/spawn/lib_libmpi_la-comm_spawn_multiple.lo
+  CC       src/binding/c/spawn/lib_libmpi_la-comm_join.lo
   CC       src/binding/c/spawn/lib_libmpi_la-lookup_name.lo
+  CC       src/binding/c/spawn/lib_libmpi_la-comm_spawn.lo
   CC       src/binding/c/spawn/lib_libmpi_la-open_port.lo
   CC       src/binding/c/spawn/lib_libmpi_la-publish_name.lo
   CC       src/binding/c/spawn/lib_libmpi_la-unpublish_name.lo
@@ -1374,180 +1374,180 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/binding/c/stream/lib_libmpi_la-comm_get_stream.lo
   CC       src/binding/c/stream/lib_libmpi_la-start_progress_thread.lo
   CC       src/binding/c/stream/lib_libmpi_la-stream_progress.lo
-  CC       src/binding/c/stream/lib_libmpi_la-stream_send.lo
   CC       src/binding/c/stream/lib_libmpi_la-stop_progress_thread.lo
+  CC       src/binding/c/stream/lib_libmpi_la-stream_send.lo
   CC       src/binding/c/stream/lib_libmpi_la-stream_isend.lo
   CC       src/binding/c/stream/lib_libmpi_la-stream_recv.lo
-  CC       src/binding/c/stream/lib_libmpi_la-send_enqueue.lo
   CC       src/binding/c/stream/lib_libmpi_la-stream_irecv.lo
-  CC       src/binding/c/stream/lib_libmpi_la-isend_enqueue.lo
+  CC       src/binding/c/stream/lib_libmpi_la-send_enqueue.lo
   CC       src/binding/c/stream/lib_libmpi_la-recv_enqueue.lo
+  CC       src/binding/c/stream/lib_libmpi_la-isend_enqueue.lo
   CC       src/binding/c/stream/lib_libmpi_la-wait_enqueue.lo
   CC       src/binding/c/stream/lib_libmpi_la-irecv_enqueue.lo
   CC       src/binding/c/stream/lib_libmpi_la-waitall_enqueue.lo
   CC       src/binding/c/stream/lib_libmpi_la-allreduce_enqueue.lo
+  CC       src/binding/c/threadcomm/lib_libmpi_la-threadcomm_start.lo
   CC       src/binding/c/threadcomm/lib_libmpi_la-threadcomm_init.lo
   CC       src/binding/c/threadcomm/lib_libmpi_la-threadcomm_free.lo
-  CC       src/binding/c/threadcomm/lib_libmpi_la-threadcomm_start.lo
+  CC       src/binding/c/timer/lib_libmpi_la-wtick.lo
   CC       src/binding/c/threadcomm/lib_libmpi_la-threadcomm_finish.lo
   CC       src/binding/c/timer/lib_libmpi_la-wtime.lo
   CC       src/binding/c/topo/lib_libmpi_la-cart_coords.lo
   CC       src/binding/c/topo/lib_libmpi_la-cart_create.lo
-  CC       src/binding/c/timer/lib_libmpi_la-wtick.lo
   CC       src/binding/c/topo/lib_libmpi_la-cart_get.lo
   CC       src/binding/c/topo/lib_libmpi_la-cart_map.lo
   CC       src/binding/c/topo/lib_libmpi_la-cart_rank.lo
   CC       src/binding/c/topo/lib_libmpi_la-cart_shift.lo
   CC       src/binding/c/topo/lib_libmpi_la-cart_sub.lo
   CC       src/binding/c/topo/lib_libmpi_la-cartdim_get.lo
-  CC       src/binding/c/topo/lib_libmpi_la-dims_create.lo
   CC       src/binding/c/topo/lib_libmpi_la-dist_graph_create.lo
-  CC       src/binding/c/topo/lib_libmpi_la-dist_graph_create_adjacent.lo
+  CC       src/binding/c/topo/lib_libmpi_la-dims_create.lo
   CC       src/binding/c/topo/lib_libmpi_la-dist_graph_neighbors.lo
+  CC       src/binding/c/topo/lib_libmpi_la-dist_graph_create_adjacent.lo
   CC       src/binding/c/topo/lib_libmpi_la-dist_graph_neighbors_count.lo
-  CC       src/binding/c/topo/lib_libmpi_la-get_hw_resource_info.lo
   CC       src/binding/c/topo/lib_libmpi_la-graph_create.lo
-  CC       src/binding/c/topo/lib_libmpi_la-graph_map.lo
+  CC       src/binding/c/topo/lib_libmpi_la-get_hw_resource_info.lo
   CC       src/binding/c/topo/lib_libmpi_la-graph_get.lo
-  CC       src/binding/c/topo/lib_libmpi_la-graph_neighbors.lo
+  CC       src/binding/c/topo/lib_libmpi_la-graph_map.lo
   CC       src/binding/c/topo/lib_libmpi_la-graph_neighbors_count.lo
-  CC       src/binding/c/topo/lib_libmpi_la-graphdims_get.lo
+  CC       src/binding/c/topo/lib_libmpi_la-graph_neighbors.lo
   CC       src/binding/c/topo/lib_libmpi_la-topo_test.lo
   CC       src/binding/c/lib_libmpi_la-io.lo
+  CC       src/binding/c/topo/lib_libmpi_la-graphdims_get.lo
   CC       src/glue/romio/lib_libmpi_la-all_romio_symbols.lo
-  CC       src/mpi/attr/lib_libmpi_la-attr_impl.lo
   CC       src/mpi/attr/lib_libmpi_la-attrutil.lo
+  CC       src/mpi/attr/lib_libmpi_la-attr_impl.lo
   CC       src/mpi/attr/lib_libmpi_la-dup_fn.lo
   CC       src/mpi/coll/allgather/lib_libmpi_la-allgather_allcomm_nb.lo
   CC       src/mpi/coll/allgather/lib_libmpi_la-allgather_intra_recursive_doubling.lo
-  CC       src/mpi/coll/allgather/lib_libmpi_la-allgather_intra_k_brucks.lo
   CC       src/mpi/coll/allgather/lib_libmpi_la-allgather_intra_brucks.lo
-  CC       src/mpi/coll/allgather/lib_libmpi_la-allgather_inter_local_gather_remote_bcast.lo
-  CC       src/mpi/coll/allgather/lib_libmpi_la-allgather_intra_ring.lo
-  CC       src/mpi/coll/allgatherv/lib_libmpi_la-allgatherv_allcomm_nb.lo
+  CC       src/mpi/coll/allgather/lib_libmpi_la-allgather_intra_k_brucks.lo
   CC       src/mpi/coll/allgather/lib_libmpi_la-allgather_intra_recexch.lo
+  CC       src/mpi/coll/allgather/lib_libmpi_la-allgather_intra_ring.lo
+  CC       src/mpi/coll/allgather/lib_libmpi_la-allgather_inter_local_gather_remote_bcast.lo
+  CC       src/mpi/coll/allgatherv/lib_libmpi_la-allgatherv_allcomm_nb.lo
   CC       src/mpi/coll/allgatherv/lib_libmpi_la-allgatherv_intra_recursive_doubling.lo
-  CC       src/mpi/coll/allgatherv/lib_libmpi_la-allgatherv_intra_brucks.lo
   CC       src/mpi/coll/allgatherv/lib_libmpi_la-allgatherv_intra_ring.lo
   CC       src/mpi/coll/allgatherv/lib_libmpi_la-allgatherv_inter_remote_gather_local_bcast.lo
+  CC       src/mpi/coll/allgatherv/lib_libmpi_la-allgatherv_intra_brucks.lo
   CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_allcomm_nb.lo
   CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_intra_recursive_doubling.lo
   CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_intra_recursive_multiplying.lo
   CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_intra_reduce_scatter_allgather.lo
   CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_intra_smp.lo
   CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_intra_tree.lo
-  CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_intra_ring.lo
   CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_intra_recexch.lo
-  CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_inter_reduce_exchange_bcast.lo
+  CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_intra_ring.lo
   CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_intra_k_reduce_scatter_allgather.lo
-  CC       src/mpi/coll/alltoall/lib_libmpi_la-alltoall_intra_pairwise_sendrecv_replace.lo
-  CC       src/mpi/coll/alltoall/lib_libmpi_la-alltoall_intra_k_brucks.lo
+  CC       src/mpi/coll/allreduce/lib_libmpi_la-allreduce_inter_reduce_exchange_bcast.lo
   CC       src/mpi/coll/alltoall/lib_libmpi_la-alltoall_allcomm_nb.lo
+  CC       src/mpi/coll/alltoall/lib_libmpi_la-alltoall_intra_pairwise_sendrecv_replace.lo
   CC       src/mpi/coll/alltoall/lib_libmpi_la-alltoall_intra_brucks.lo
+  CC       src/mpi/coll/alltoall/lib_libmpi_la-alltoall_intra_k_brucks.lo
+  CC       src/mpi/coll/alltoall/lib_libmpi_la-alltoall_intra_scattered.lo
   CC       src/mpi/coll/alltoall/lib_libmpi_la-alltoall_intra_pairwise.lo
   CC       src/mpi/coll/alltoall/lib_libmpi_la-alltoall_inter_pairwise_exchange.lo
-  CC       src/mpi/coll/alltoall/lib_libmpi_la-alltoall_intra_scattered.lo
+  CC       src/mpi/coll/alltoallv/lib_libmpi_la-alltoallv_allcomm_nb.lo
+  CC       src/mpi/coll/alltoallv/lib_libmpi_la-alltoallv_intra_scattered.lo
   CC       src/mpi/coll/alltoallv/lib_libmpi_la-alltoallv_intra_pairwise_sendrecv_replace.lo
+  CC       src/mpi/coll/alltoallv/lib_libmpi_la-alltoallv_inter_pairwise_exchange.lo
   CC       src/mpi/coll/alltoallw/lib_libmpi_la-alltoallw_allcomm_nb.lo
   CC       src/mpi/coll/alltoallw/lib_libmpi_la-alltoallw_intra_pairwise_sendrecv_replace.lo
-  CC       src/mpi/coll/alltoallv/lib_libmpi_la-alltoallv_intra_scattered.lo
   CC       src/mpi/coll/alltoallw/lib_libmpi_la-alltoallw_intra_scattered.lo
-  CC       src/mpi/coll/alltoallv/lib_libmpi_la-alltoallv_allcomm_nb.lo
-  CC       src/mpi/coll/alltoallw/lib_libmpi_la-alltoallw_inter_pairwise_exchange.lo
   CC       src/mpi/coll/barrier/lib_libmpi_la-barrier_allcomm_nb.lo
+  CC       src/mpi/coll/alltoallw/lib_libmpi_la-alltoallw_inter_pairwise_exchange.lo
   CC       src/mpi/coll/barrier/lib_libmpi_la-barrier_intra_k_dissemination.lo
   CC       src/mpi/coll/barrier/lib_libmpi_la-barrier_intra_smp.lo
   CC       src/mpi/coll/barrier/lib_libmpi_la-barrier_intra_recexch.lo
-  CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_utils.lo
   CC       src/mpi/coll/barrier/lib_libmpi_la-barrier_inter_bcast.lo
-  CC       src/mpi/coll/alltoallv/lib_libmpi_la-alltoallv_inter_pairwise_exchange.lo
+  CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_utils.lo
+  CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_allcomm_nb.lo
   CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_intra_binomial.lo
   CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_intra_scatter_recursive_doubling_allgather.lo
-  CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_allcomm_nb.lo
-  CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_intra_smp.lo
   CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_intra_scatter_ring_allgather.lo
   CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_intra_tree.lo
+  CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_intra_smp.lo
   CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_inter_remote_send_local_bcast.lo
   CC       src/mpi/coll/bcast/lib_libmpi_la-bcast_intra_pipelined_tree.lo
-  CC       src/mpi/coll/gather/lib_libmpi_la-gather_allcomm_nb.lo
-  CC       src/mpi/coll/exscan/lib_libmpi_la-exscan_intra_recursive_doubling.lo
   CC       src/mpi/coll/exscan/lib_libmpi_la-exscan_allcomm_nb.lo
-  CC       src/mpi/coll/gather/lib_libmpi_la-gather_intra_binomial.lo
+  CC       src/mpi/coll/exscan/lib_libmpi_la-exscan_intra_recursive_doubling.lo
+  CC       src/mpi/coll/gather/lib_libmpi_la-gather_allcomm_nb.lo
   CC       src/mpi/coll/gather/lib_libmpi_la-gather_inter_linear.lo
+  CC       src/mpi/coll/gather/lib_libmpi_la-gather_intra_binomial.lo
   CC       src/mpi/coll/gather/lib_libmpi_la-gather_inter_local_gather_remote_send.lo
   CC       src/mpi/coll/gatherv/lib_libmpi_la-gatherv_allcomm_nb.lo
-  CC       src/mpi/coll/gatherv/lib_libmpi_la-gatherv_allcomm_linear.lo
-  CC       src/mpi/coll/reduce_scatter/lib_libmpi_la-reduce_scatter_allcomm_nb.lo
   CC       src/mpi/coll/reduce_scatter/lib_libmpi_la-reduce_scatter_intra_recursive_halving.lo
-  CC       src/mpi/coll/reduce_scatter/lib_libmpi_la-reduce_scatter_intra_pairwise.lo
-  CC       src/mpi/coll/reduce_scatter/lib_libmpi_la-reduce_scatter_intra_noncommutative.lo
+  CC       src/mpi/coll/reduce_scatter/lib_libmpi_la-reduce_scatter_allcomm_nb.lo
   CC       src/mpi/coll/reduce_scatter/lib_libmpi_la-reduce_scatter_intra_recursive_doubling.lo
-  CC       src/mpi/coll/reduce_scatter_block/lib_libmpi_la-reduce_scatter_block_allcomm_nb.lo
+  CC       src/mpi/coll/reduce_scatter/lib_libmpi_la-reduce_scatter_intra_pairwise.lo
+  CC       src/mpi/coll/gatherv/lib_libmpi_la-gatherv_allcomm_linear.lo
+  CC       src/mpi/coll/reduce_scatter/lib_libmpi_la-reduce_scatter_intra_noncommutative.lo
   CC       src/mpi/coll/reduce_scatter/lib_libmpi_la-reduce_scatter_inter_remote_reduce_local_scatter.lo
-  CC       src/mpi/coll/reduce_scatter_block/lib_libmpi_la-reduce_scatter_block_intra_recursive_halving.lo
+  CC       src/mpi/coll/reduce_scatter_block/lib_libmpi_la-reduce_scatter_block_allcomm_nb.lo
   CC       src/mpi/coll/reduce_scatter_block/lib_libmpi_la-reduce_scatter_block_intra_pairwise.lo
+  CC       src/mpi/coll/reduce_scatter_block/lib_libmpi_la-reduce_scatter_block_intra_recursive_halving.lo
   CC       src/mpi/coll/reduce_scatter_block/lib_libmpi_la-reduce_scatter_block_intra_recursive_doubling.lo
   CC       src/mpi/coll/reduce_scatter_block/lib_libmpi_la-reduce_scatter_block_intra_noncommutative.lo
-  CC       src/mpi/coll/reduce/lib_libmpi_la-reduce_intra_binomial.lo
   CC       src/mpi/coll/reduce_scatter_block/lib_libmpi_la-reduce_scatter_block_inter_remote_reduce_local_scatter.lo
   CC       src/mpi/coll/reduce/lib_libmpi_la-reduce_allcomm_nb.lo
   CC       src/mpi/coll/reduce/lib_libmpi_la-reduce_intra_reduce_scatter_gather.lo
-  CC       src/mpi/coll/reduce/lib_libmpi_la-reduce_intra_smp.lo
+  CC       src/mpi/coll/reduce/lib_libmpi_la-reduce_intra_binomial.lo
   CC       src/mpi/coll/reduce/lib_libmpi_la-reduce_inter_local_reduce_remote_send.lo
+  CC       src/mpi/coll/reduce/lib_libmpi_la-reduce_intra_smp.lo
   CC       src/mpi/coll/scan/lib_libmpi_la-scan_allcomm_nb.lo
-  CC       src/mpi/coll/scatter/lib_libmpi_la-scatter_intra_binomial.lo
   CC       src/mpi/coll/scan/lib_libmpi_la-scan_intra_recursive_doubling.lo
-  CC       src/mpi/coll/scatter/lib_libmpi_la-scatter_inter_linear.lo
-  CC       src/mpi/coll/scatter/lib_libmpi_la-scatter_allcomm_nb.lo
   CC       src/mpi/coll/scan/lib_libmpi_la-scan_intra_smp.lo
-  CC       src/mpi/coll/scatter/lib_libmpi_la-scatter_inter_remote_send_local_scatter.lo
+  CC       src/mpi/coll/scatter/lib_libmpi_la-scatter_allcomm_nb.lo
+  CC       src/mpi/coll/scatter/lib_libmpi_la-scatter_intra_binomial.lo
+  CC       src/mpi/coll/scatter/lib_libmpi_la-scatter_inter_linear.lo
   CC       src/mpi/coll/scatterv/lib_libmpi_la-scatterv_allcomm_nb.lo
+  CC       src/mpi/coll/scatter/lib_libmpi_la-scatter_inter_remote_send_local_scatter.lo
   CC       src/mpi/coll/scatterv/lib_libmpi_la-scatterv_allcomm_linear.lo
   CC       src/mpi/coll/neighbor_allgather/lib_libmpi_la-neighbor_allgather_allcomm_nb.lo
-  CC       src/mpi/coll/neighbor_allgatherv/lib_libmpi_la-neighbor_allgatherv_allcomm_nb.lo
   CC       src/mpi/coll/neighbor_alltoall/lib_libmpi_la-neighbor_alltoall_allcomm_nb.lo
-  CC       src/mpi/coll/neighbor_alltoallv/lib_libmpi_la-neighbor_alltoallv_allcomm_nb.lo
+  CC       src/mpi/coll/neighbor_allgatherv/lib_libmpi_la-neighbor_allgatherv_allcomm_nb.lo
   CC       src/mpi/coll/neighbor_alltoallw/lib_libmpi_la-neighbor_alltoallw_allcomm_nb.lo
+  CC       src/mpi/coll/neighbor_alltoallv/lib_libmpi_la-neighbor_alltoallv_allcomm_nb.lo
   CC       src/mpi/coll/iallgather/lib_libmpi_la-iallgather_intra_sched_recursive_doubling.lo
   CC       src/mpi/coll/iallgather/lib_libmpi_la-iallgather_intra_sched_brucks.lo
   CC       src/mpi/coll/iallgather/lib_libmpi_la-iallgather_intra_sched_ring.lo
   CC       src/mpi/coll/iallgather/lib_libmpi_la-iallgather_inter_sched_local_gather_remote_bcast.lo
-  CC       src/mpi/coll/iallgather/lib_libmpi_la-iallgather_tsp_brucks.lo
   CC       src/mpi/coll/iallgather/lib_libmpi_la-iallgather_tsp_recexch.lo
+  CC       src/mpi/coll/iallgather/lib_libmpi_la-iallgather_tsp_brucks.lo
   CC       src/mpi/coll/iallgatherv/lib_libmpi_la-iallgatherv_intra_sched_recursive_doubling.lo
   CC       src/mpi/coll/iallgather/lib_libmpi_la-iallgather_tsp_ring.lo
   CC       src/mpi/coll/iallgatherv/lib_libmpi_la-iallgatherv_intra_sched_brucks.lo
   CC       src/mpi/coll/iallgatherv/lib_libmpi_la-iallgatherv_intra_sched_ring.lo
-  CC       src/mpi/coll/iallgatherv/lib_libmpi_la-iallgatherv_inter_sched_remote_gather_local_bcast.lo
   CC       src/mpi/coll/iallgatherv/lib_libmpi_la-iallgatherv_tsp_brucks.lo
+  CC       src/mpi/coll/iallgatherv/lib_libmpi_la-iallgatherv_inter_sched_remote_gather_local_bcast.lo
   CC       src/mpi/coll/iallgatherv/lib_libmpi_la-iallgatherv_tsp_recexch.lo
-  CC       src/mpi/coll/iallgatherv/lib_libmpi_la-iallgatherv_utils.lo
   CC       src/mpi/coll/iallgatherv/lib_libmpi_la-iallgatherv_tsp_ring.lo
-  CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_intra_sched_reduce_scatter_allgather.lo
+  CC       src/mpi/coll/iallgatherv/lib_libmpi_la-iallgatherv_utils.lo
   CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_intra_sched_naive.lo
+  CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_intra_sched_reduce_scatter_allgather.lo
   CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_intra_sched_recursive_doubling.lo
-  CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_intra_sched_smp.lo
-  CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_inter_sched_remote_reduce_local_bcast.lo
   CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_tsp_recursive_exchange_common.lo
+  CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_inter_sched_remote_reduce_local_bcast.lo
+  CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_intra_sched_smp.lo
   CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_tsp_recexch.lo
   CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_tsp_recexch_reduce_scatter_recexch_allgatherv.lo
   CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_tsp_ring.lo
   CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_tsp_tree.lo
-  CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_intra_sched_inplace.lo
   CC       src/mpi/coll/iallreduce/lib_libmpi_la-iallreduce_tsp_auto.lo
-  CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_intra_sched_brucks.lo
-  CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_intra_sched_permuted_sendrecv.lo
+  CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_intra_sched_inplace.lo
   CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_intra_sched_pairwise.lo
+  CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_intra_sched_brucks.lo
   CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_inter_sched_pairwise_exchange.lo
+  CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_intra_sched_permuted_sendrecv.lo
+  CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_tsp_scattered.lo
   CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_tsp_brucks.lo
   CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_tsp_ring.lo
-  CC       src/mpi/coll/ialltoall/lib_libmpi_la-ialltoall_tsp_scattered.lo
-  CC       src/mpi/coll/ialltoallv/lib_libmpi_la-ialltoallv_intra_sched_inplace.lo
   CC       src/mpi/coll/ialltoallv/lib_libmpi_la-ialltoallv_intra_sched_blocked.lo
-  CC       src/mpi/coll/ialltoallv/lib_libmpi_la-ialltoallv_inter_sched_pairwise_exchange.lo
+  CC       src/mpi/coll/ialltoallv/lib_libmpi_la-ialltoallv_intra_sched_inplace.lo
   CC       src/mpi/coll/ialltoallv/lib_libmpi_la-ialltoallv_tsp_blocked.lo
-  CC       src/mpi/coll/ialltoallv/lib_libmpi_la-ialltoallv_tsp_scattered.lo
+  CC       src/mpi/coll/ialltoallv/lib_libmpi_la-ialltoallv_inter_sched_pairwise_exchange.lo
   CC       src/mpi/coll/ialltoallv/lib_libmpi_la-ialltoallv_tsp_inplace.lo
+  CC       src/mpi/coll/ialltoallv/lib_libmpi_la-ialltoallv_tsp_scattered.lo
   CC       src/mpi/coll/ialltoallw/lib_libmpi_la-ialltoallw_intra_sched_inplace.lo
   CC       src/mpi/coll/ialltoallw/lib_libmpi_la-ialltoallw_intra_sched_blocked.lo
   CC       src/mpi/coll/ialltoallw/lib_libmpi_la-ialltoallw_inter_sched_pairwise_exchange.lo
@@ -1558,8 +1558,8 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/mpi/coll/ibarrier/lib_libmpi_la-ibarrier_inter_sched_bcast.lo
   CC       src/mpi/coll/ibarrier/lib_libmpi_la-ibarrier_intra_tsp_dissem.lo
   CC       src/mpi/coll/ibcast/lib_libmpi_la-ibcast_intra_sched_binomial.lo
-  CC       src/mpi/coll/ibarrier/lib_libmpi_la-ibarrier_tsp_auto.lo
   CC       src/mpi/coll/ibcast/lib_libmpi_la-ibcast_intra_sched_scatter_ring_allgather.lo
+  CC       src/mpi/coll/ibarrier/lib_libmpi_la-ibarrier_tsp_auto.lo
   CC       src/mpi/coll/ibcast/lib_libmpi_la-ibcast_intra_sched_scatter_recursive_doubling_allgather.lo
   CC       src/mpi/coll/ibcast/lib_libmpi_la-ibcast_intra_sched_smp.lo
   CC       src/mpi/coll/ibcast/lib_libmpi_la-ibcast_inter_sched_flat.lo
@@ -1568,185 +1568,185 @@ cp -p src/env/mpicxx.bash src/env/mpicxx
   CC       src/mpi/coll/ibcast/lib_libmpi_la-ibcast_tsp_tree.lo
   CC       src/mpi/coll/ibcast/lib_libmpi_la-ibcast_tsp_auto.lo
   CC       src/mpi/coll/ibcast/lib_libmpi_la-ibcast_utils.lo
-  CC       src/mpi/coll/iexscan/lib_libmpi_la-iexscan_intra_sched_recursive_doubling.lo
   CC       src/mpi/coll/igather/lib_libmpi_la-igather_intra_sched_binomial.lo
+  CC       src/mpi/coll/iexscan/lib_libmpi_la-iexscan_intra_sched_recursive_doubling.lo
   CC       src/mpi/coll/igather/lib_libmpi_la-igather_inter_sched_short.lo
   CC       src/mpi/coll/igather/lib_libmpi_la-igather_inter_sched_long.lo
   CC       src/mpi/coll/igather/lib_libmpi_la-igather_tsp_tree.lo
   CC       src/mpi/coll/igatherv/lib_libmpi_la-igatherv_allcomm_sched_linear.lo
   CC       src/mpi/coll/igatherv/lib_libmpi_la-igatherv_tsp_linear.lo
-  CC       src/mpi/coll/ireduce_scatter/lib_libmpi_la-ireduce_scatter_intra_sched_pairwise.lo
   CC       src/mpi/coll/ireduce_scatter/lib_libmpi_la-ireduce_scatter_intra_sched_recursive_halving.lo
   CC       src/mpi/coll/ireduce_scatter/lib_libmpi_la-ireduce_scatter_intra_sched_recursive_doubling.lo
-  CC       src/mpi/coll/ireduce_scatter/lib_libmpi_la-ireduce_scatter_inter_sched_remote_reduce_local_scatterv.lo
   CC       src/mpi/coll/ireduce_scatter/lib_libmpi_la-ireduce_scatter_intra_sched_noncommutative.lo
-  CC       src/mpi/coll/ireduce_scatter/lib_libmpi_la-ireduce_scatter_tsp_recexch.lo
+  CC       src/mpi/coll/ireduce_scatter/lib_libmpi_la-ireduce_scatter_inter_sched_remote_reduce_local_scatterv.lo
+  CC       src/mpi/coll/ireduce_scatter/lib_libmpi_la-ireduce_scatter_intra_sched_pairwise.lo
   CC       src/mpi/coll/ireduce_scatter_block/lib_libmpi_la-ireduce_scatter_block_intra_sched_recursive_halving.lo
   CC       src/mpi/coll/ireduce_scatter_block/lib_libmpi_la-ireduce_scatter_block_intra_sched_pairwise.lo
+  CC       src/mpi/coll/ireduce_scatter/lib_libmpi_la-ireduce_scatter_tsp_recexch.lo
   CC       src/mpi/coll/ireduce_scatter_block/lib_libmpi_la-ireduce_scatter_block_intra_sched_recursive_doubling.lo
-  CC       src/mpi/coll/ireduce_scatter_block/lib_libmpi_la-ireduce_scatter_block_inter_sched_remote_reduce_local_scatterv.lo
   CC       src/mpi/coll/ireduce_scatter_block/lib_libmpi_la-ireduce_scatter_block_intra_sched_noncommutative.lo
   CC       src/mpi/coll/ireduce_scatter_block/lib_libmpi_la-ireduce_scatter_block_tsp_recexch.lo
-  CC       src/mpi/coll/ireduce/lib_libmpi_la-ireduce_intra_sched_reduce_scatter_gather.lo
-  CC       src/mpi/coll/ireduce/lib_libmpi_la-ireduce_intra_sched_smp.lo
-  CC       src/mpi/coll/ireduce/lib_libmpi_la-ireduce_intra_sched_binomial.lo
+  CC       src/mpi/coll/ireduce_scatter_block/lib_libmpi_la-ireduce_scatter_block_inter_sched_remote_reduce_local_scatterv.lo
   CC       src/mpi/coll/ireduce/lib_libmpi_la-ireduce_inter_sched_local_reduce_remote_send.lo
+  CC       src/mpi/coll/ireduce/lib_libmpi_la-ireduce_intra_sched_binomial.lo
+  CC       src/mpi/coll/ireduce/lib_libmpi_la-ireduce_intra_sched_smp.lo
+  CC       src/mpi/coll/ireduce/lib_libmpi_la-ireduce_intra_sched_reduce_scatter_gather.lo
   CC       src/mpi/coll/ireduce/lib_libmpi_la-ireduce_tsp_tree.lo
-  CC       src/mpi/coll/iscan/lib_libmpi_la-iscan_intra_sched_recursive_doubling.lo
   CC       src/mpi/coll/iscan/lib_libmpi_la-iscan_intra_sched_smp.lo
-  CC       src/mpi/coll/iscan/lib_libmpi_la-iscan_tsp_recursive_doubling.lo
+  CC       src/mpi/coll/iscan/lib_libmpi_la-iscan_intra_sched_recursive_doubling.lo
   CC       src/mpi/coll/ireduce/lib_libmpi_la-ireduce_tsp_auto.lo
+  CC       src/mpi/coll/iscan/lib_libmpi_la-iscan_tsp_recursive_doubling.lo
   CC       src/mpi/coll/iscatter/lib_libmpi_la-iscatter_intra_sched_binomial.lo
   CC       src/mpi/coll/iscatter/lib_libmpi_la-iscatter_inter_sched_linear.lo
   CC       src/mpi/coll/iscatter/lib_libmpi_la-iscatter_inter_sched_remote_send_local_scatter.lo
   CC       src/mpi/coll/iscatter/lib_libmpi_la-iscatter_tsp_tree.lo
   CC       src/mpi/coll/iscatterv/lib_libmpi_la-iscatterv_allcomm_sched_linear.lo
   CC       src/mpi/coll/iscatterv/lib_libmpi_la-iscatterv_tsp_linear.lo
-  CC       src/mpi/coll/ineighbor_allgather/lib_libmpi_la-ineighbor_allgather_tsp_linear.lo
   CC       src/mpi/coll/ineighbor_allgather/lib_libmpi_la-ineighbor_allgather_allcomm_sched_linear.lo
+  CC       src/mpi/coll/ineighbor_allgather/lib_libmpi_la-ineighbor_allgather_tsp_linear.lo
   CC       src/mpi/coll/ineighbor_allgatherv/lib_libmpi_la-ineighbor_allgatherv_allcomm_sched_linear.lo
   CC       src/mpi/coll/ineighbor_allgatherv/lib_libmpi_la-ineighbor_allgatherv_tsp_linear.lo
   CC       src/mpi/coll/ineighbor_alltoall/lib_libmpi_la-ineighbor_alltoall_tsp_linear.lo
   CC       src/mpi/coll/ineighbor_alltoall/lib_libmpi_la-ineighbor_alltoall_allcomm_sched_linear.lo
   CC       src/mpi/coll/ineighbor_alltoallv/lib_libmpi_la-ineighbor_alltoallv_allcomm_sched_linear.lo
   CC       src/mpi/coll/ineighbor_alltoallv/lib_libmpi_la-ineighbor_alltoallv_tsp_linear.lo
-  CC       src/mpi/coll/op/lib_libmpi_la-oputil.lo
-  CC       src/mpi/coll/op/lib_libmpi_la-op_impl.lo
-  CC       src/mpi/coll/op/lib_libmpi_la-op_fns.lo
-  CC       src/mpi/coll/ineighbor_alltoallw/lib_libmpi_la-ineighbor_alltoallw_tsp_linear.lo
   CC       src/mpi/coll/ineighbor_alltoallw/lib_libmpi_la-ineighbor_alltoallw_allcomm_sched_linear.lo
+  CC       src/mpi/coll/ineighbor_alltoallw/lib_libmpi_la-ineighbor_alltoallw_tsp_linear.lo
+  CC       src/mpi/coll/op/lib_libmpi_la-op_impl.lo
+  CC       src/mpi/coll/op/lib_libmpi_la-oputil.lo
+  CC       src/mpi/coll/op/lib_libmpi_la-op_fns.lo
   CC       src/mpi/coll/op/lib_libmpi_la-opequal.lo
   CC       src/mpi/coll/reduce_local/lib_libmpi_la-reduce_local.lo
-  CC       src/mpi/coll/allreduce_group/lib_libmpi_la-allreduce_group.lo
   CC       src/mpi/coll/src/lib_libmpi_la-coll_impl.lo
+  CC       src/mpi/coll/allreduce_group/lib_libmpi_la-allreduce_group.lo
   CC       src/mpi/coll/src/lib_libmpi_la-csel.lo
-  CC       src/mpi/coll/transports/gentran/lib_libmpi_la-gentran_utils.lo
-  CC       src/mpi/coll/transports/gentran/lib_libmpi_la-gentran_impl.lo
   CC       src/mpi/coll/src/lib_libmpi_la-csel_container.lo
+  CC       src/mpi/coll/transports/gentran/lib_libmpi_la-gentran_impl.lo
+  CC       src/mpi/coll/transports/gentran/lib_libmpi_la-gentran_utils.lo
   CC       src/mpi/coll/transports/gentran/lib_libmpi_la-tsp_gentran.lo
-  CC       src/mpi/coll/algorithms/treealgo/lib_libmpi_la-treealgo.lo
   CC       src/mpi/coll/algorithms/treealgo/lib_libmpi_la-treeutil.lo
+  CC       src/mpi/coll/algorithms/treealgo/lib_libmpi_la-treealgo.lo
   CC       src/mpi/coll/algorithms/recexchalgo/lib_libmpi_la-recexchalgo.lo
   CC       src/mpi/coll/algorithms/stubalgo/lib_libmpi_la-stubalgo.lo
   CC       src/mpi/coll/lib_libmpi_la-mpir_coll_sched_auto.lo
   CC       src/mpi/coll/lib_libmpi_la-mpir_coll.lo
   CC       src/mpi/coll/lib_libmpi_la-helper_fns.lo
   CC       src/mpi/coll/lib_libmpi_la-nbcutil.lo
+  CC       src/mpi/comm/lib_libmpi_la-comm_split.lo
   CC       src/mpi/comm/lib_libmpi_la-comm_impl.lo
   CC       src/mpi/comm/lib_libmpi_la-comm_split_type.lo
-  CC       src/mpi/comm/lib_libmpi_la-comm_split.lo
-  CC       src/mpi/comm/lib_libmpi_la-comm_split_type_nbhd.lo
   CC       src/mpi/comm/lib_libmpi_la-builtin_comms.lo
+  CC       src/mpi/comm/lib_libmpi_la-comm_split_type_nbhd.lo
   CC       src/mpi/comm/lib_libmpi_la-ulfm_impl.lo
   CC       src/mpi/comm/lib_libmpi_la-commutil.lo
   CC       src/mpi/comm/lib_libmpi_la-contextid.lo
   CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_ext32.lo
-  CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_op.lo
   CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_flatten.lo
-  CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_yaksa_init.lo
+  CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_op.lo
   CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_yaksa_create.lo
+  CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_yaksa_init.lo
   CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_yaksa_pack.lo
-  CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_yaksa_iov.lo
   CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_yaksa_pack_external.lo
-  CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_yaksa_commit.lo
+  CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_yaksa_iov.lo
   CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_yaksa_debug.lo
+  CC       src/mpi/datatype/typerep/src/lib_libmpi_la-typerep_yaksa_commit.lo
   CC       src/mpi/datatype/lib_libmpi_la-datatype_impl.lo
   CC       src/mpi/datatype/lib_libmpi_la-typeutil.lo
   CC       src/mpi/datatype/lib_libmpi_la-type_contents.lo
   CC       src/mpi/datatype/lib_libmpi_la-get_elements_x.lo
-  CC       src/mpi/datatype/lib_libmpi_la-type_create.lo
   CC       src/mpi/datatype/lib_libmpi_la-type_create_darray.lo
-  CC       src/mpi/datatype/lib_libmpi_la-pairtypes.lo
   CC       src/mpi/datatype/lib_libmpi_la-type_create_subarray.lo
+  CC       src/mpi/datatype/lib_libmpi_la-pairtypes.lo
+  CC       src/mpi/datatype/lib_libmpi_la-type_create.lo
   CC       src/mpi/datatype/lib_libmpi_la-create_f90.lo
   CC       src/mpi/datatype/lib_libmpi_la-type_debug.lo
-  CC       src/mpi/errhan/lib_libmpi_la-errhan_file.lo
   CC       src/mpi/errhan/lib_libmpi_la-errhan_impl.lo
-  CC       src/mpi/errhan/lib_libmpi_la-dynerrutil.lo
-  CC       src/mpi/group/lib_libmpi_la-group_impl.lo
+  CC       src/mpi/errhan/lib_libmpi_la-errhan_file.lo
   CC       src/mpi/errhan/lib_libmpi_la-errutil.lo
-  CC       src/mpi/info/lib_libmpi_la-info_impl.lo
+  CC       src/mpi/errhan/lib_libmpi_la-dynerrutil.lo
   CC       src/mpi/group/lib_libmpi_la-grouputil.lo
+  CC       src/mpi/group/lib_libmpi_la-group_impl.lo
+  CC       src/mpi/info/lib_libmpi_la-info_impl.lo
+  CC       src/mpi/init/lib_libmpi_la-init_impl.lo
   CC       src/mpi/info/lib_libmpi_la-infoutil.lo
   CC       src/mpi/init/lib_libmpi_la-init_util.lo
-  CC       src/mpi/init/lib_libmpi_la-init_impl.lo
   CC       src/mpi/init/lib_libmpi_la-mpir_init.lo
   CC       src/mpi/init/lib_libmpi_la-globals.lo
   CC       src/mpi/init/lib_libmpi_la-initinfo.lo
-  CC       src/mpi/init/lib_libmpi_la-local_proc_attrs.lo
   CC       src/mpi/init/lib_libmpi_la-mutex.lo
+  CC       src/mpi/init/lib_libmpi_la-local_proc_attrs.lo
   CC       src/mpi/init/lib_libmpi_la-init_async.lo
   CC       src/mpi/init/lib_libmpi_la-init_windows.lo
-  CC       src/mpi/init/lib_libmpi_la-init_bindings.lo
   CC       src/mpi/init/lib_libmpi_la-init_dbg_logging.lo
+  CC       src/mpi/misc/lib_libmpi_la-utils.lo
   CC       src/mpi/init/lib_libmpi_la-init_gpu.lo
   CC       src/mpi/misc/lib_libmpi_la-f2c_impl.lo
-  CC       src/mpi/misc/lib_libmpi_la-utils.lo
+  CC       src/mpi/init/lib_libmpi_la-init_bindings.lo
   CC       src/mpi/misc/lib_libmpi_la-memory_alloc_kinds.lo
   CC       src/mpi/misc/lib_libmpi_la-gpu_query.lo
   CC       src/mpi/pt2pt/lib_libmpi_la-sendrecv.lo
   CC       src/mpi/pt2pt/lib_libmpi_la-bsendutil.lo
   CC       src/mpi/request/lib_libmpi_la-request_impl.lo
-  CC       src/mpi/request/lib_libmpi_la-mpir_greq.lo
   CC       src/mpi/request/lib_libmpi_la-mpir_request.lo
+  CC       src/mpi/request/lib_libmpi_la-mpir_greq.lo
   CC       src/mpi/rma/lib_libmpi_la-rma_impl.lo
-  CC       src/mpi/rma/lib_libmpi_la-rmatypeutil.lo
   CC       src/mpi/rma/lib_libmpi_la-winutil.lo
+  CC       src/mpi/rma/lib_libmpi_la-rmatypeutil.lo
   CC       src/mpi/session/lib_libmpi_la-session_impl.lo
   CC       src/mpi/session/lib_libmpi_la-session_util.lo
   CC       src/mpi/spawn/lib_libmpi_la-spawn_impl.lo
   CC       src/mpi/topo/lib_libmpi_la-dims_create.lo
-  CC       src/mpi/topo/lib_libmpi_la-dist_graph_create.lo
   CC       src/mpi/topo/lib_libmpi_la-topo_impl.lo
-  CC       src/mpi/stream/lib_libmpi_la-stream_impl.lo
+  CC       src/mpi/topo/lib_libmpi_la-dist_graph_create.lo
   CC       src/mpi/topo/lib_libmpi_la-topoutil.lo
   CC       src/mpi/stream/lib_libmpi_la-stream_enqueue.lo
   CC       src/mpi/stream/lib_libmpi_la-stream_util.lo
   CC       src/mpi/threadcomm/lib_libmpi_la-threadcomm_impl.lo
-  CC       src/util/lib_libmpi_la-mpir_assert.lo
   CC       src/mpi/threadcomm/lib_libmpi_la-threadcomm_pt2pt_impl.lo
   CC       src/mpi/threadcomm/lib_libmpi_la-threadcomm_coll_impl.lo
+  CC       src/util/lib_libmpi_la-mpir_assert.lo
   CC       src/util/lib_libmpi_la-mpir_cvars.lo
-  CC       src/util/lib_libmpi_la-mpir_nodemap.lo
   CC       src/util/lib_libmpi_la-mpir_pmi.lo
+  CC       src/util/lib_libmpi_la-mpir_nodemap.lo
+  CC       src/mpi/stream/lib_libmpi_la-stream_impl.lo
   CC       src/util/lib_libmpi_la-mpir_handlemem.lo
   CC       src/util/lib_libmpi_la-mpir_localproc.lo
   CC       src/util/lib_libmpi_la-mpir_strerror.lo
+  CC       src/util/lib_libmpi_la-mpir_hwtopo.lo
   CC       src/util/lib_libmpi_la-mpir_netloc.lo
   CC       src/util/lib_libmpi_la-mpir_nettopo.lo
-  CC       src/util/lib_libmpi_la-mpir_hwtopo.lo
-  CC       src/util/lib_libmpi_la-mpir_progress_hook.lo
   CC       src/util/lib_libmpi_la-mpir_async_things.lo
-  CC       src/glue/romio/lib_libmpi_la-glue_romio.lo
+  CC       src/util/lib_libmpi_la-mpir_progress_hook.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-ch4_globals.lo
+  CC       src/mpid/ch4/src/lib_libmpi_la-ch4_impl.lo
+  CC       src/glue/romio/lib_libmpi_la-glue_romio.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-ch4_init.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-init_comm.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-ch4_comm.lo
-  CC       src/mpid/ch4/src/lib_libmpi_la-ch4_impl.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-ch4_spawn.lo
-  CC       src/mpid/ch4/src/lib_libmpi_la-ch4_part.lo
-  CC       src/mpid/ch4/src/lib_libmpi_la-ch4i_comm.lo
-  CC       src/mpid/ch4/src/lib_libmpi_la-ch4_vci.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-ch4_win.lo
-  CC       src/mpid/ch4/src/lib_libmpi_la-ch4_proc.lo
-  CC       src/mpid/ch4/src/lib_libmpi_la-ch4_persist.lo
+  CC       src/mpid/ch4/src/lib_libmpi_la-ch4_part.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-ch4_self.lo
+  CC       src/mpid/ch4/src/lib_libmpi_la-ch4_proc.lo
+  CC       src/mpid/ch4/src/lib_libmpi_la-ch4i_comm.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-ch4_stream_enqueue.lo
+  CC       src/mpid/ch4/src/lib_libmpi_la-ch4_persist.lo
+  CC       src/mpid/ch4/src/lib_libmpi_la-ch4_vci.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-mpidig_init.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-mpidig_recvq.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-mpidig_pt2pt_callbacks.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-mpidig_rma_callbacks.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-mpidig_win.lo
+  CC       src/mpid/ch4/src/lib_libmpi_la-mpid_ch4_net_array.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-mpidig_part.lo
   CC       src/mpid/ch4/src/lib_libmpi_la-mpidig_part_callbacks.lo
-  CC       src/mpid/ch4/src/lib_libmpi_la-mpidig_comm_abort.lo
-  CC       src/mpid/ch4/src/lib_libmpi_la-mpid_ch4_net_array.lo
   CC       src/mpid/ch4/netmod/src/lib_libmpi_la-netmod_impl.lo
+  CC       src/mpid/ch4/src/lib_libmpi_la-mpidig_comm_abort.lo
   MOD      src/binding/fortran/use_mpi/mpi_constants.mod-stamp
   MOD      src/binding/fortran/use_mpi/mpi_sizeofs.mod-stamp
   F77LD    lib/libf77_mpi.la
-  MOD      src/binding/fortran/use_mpi/pmpi_base.mod-stamp
   MOD      src/binding/fortran/use_mpi/mpi_base.mod-stamp
+  MOD      src/binding/fortran/use_mpi/pmpi_base.mod-stamp
   MOD      src/binding/fortran/use_mpi/mpi.mod-stamp
   FCLD     lib/libf90_mpi.la
   GEN      lib/libmpi.la
